@@ -1,0 +1,14 @@
+# Visual Studio
+*.suo
+*.user
+*.vspscc
+*.vssscc
+.vs/
+.user
+*.pdb
+*.exe
+*.dll
+bin/
+obj/
+packages/
+**/*.Designer.cs

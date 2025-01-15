@@ -1,2 +1,0 @@
-# StudentIndex
-Pravljenje StudentAplikacije
