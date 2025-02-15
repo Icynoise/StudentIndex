@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "Ya7xRSwS1Ah8ixl4i6YS077zy5v0L7vwTCXFR/LU2Mw=",
-  "Source": "StudentIndex",
-  "BasePath": "_content/StudentIndex",
+  "Hash": "NEfLprz0dIY2awovPr3RWVZfHlmfGlB4ms8R0u+nk/k=",
+  "Source": "StudentIndex.Server",
+  "BasePath": "_content/StudentIndex.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
