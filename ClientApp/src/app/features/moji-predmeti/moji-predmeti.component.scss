@@ -1,0 +1,63 @@
+/* moji-predmeti.component.css */
+.moji-predmeti-container {
+    padding: 1.5rem; /* Increased padding */
+    background-color: #f9f9f9; /* Light background for content */
+    overflow-y: none; /* Enable scrolling for content */
+    height: 100%; /* Full height of parent */
+}
+
+.content-section {
+    background: white;
+    padding: 1.5rem; /* Increased padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 900px; /* Slightly increased max-width */
+    margin: 0 auto; /* Center the container */
+}
+
+.semestar {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem; /* Increased margin */
+    font-size: 1.5rem; /* Increased font size */
+}
+
+.predmeti-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem; /* Increased margin */
+}
+
+.predmeti-table th,
+.predmeti-table td {
+    padding: 1rem; /* Increased padding */
+    text-align: left;
+    font-size: 1rem; /* Increased font size */
+}
+
+.predmeti-table th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 500;
+}
+
+.predmeti-table tr {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.predmeti-table tr:last-child {
+    border-bottom: none;
+}
+
+.status-badge {
+    padding: 0.5rem 1rem; /* Increased padding */
+    border-radius: 20px;
+    font-size: 0.9rem; /* Adjusted font size */
+    font-weight: 500;
+    background-color: #e74c3c;
+    color: white;
+}
+
+.status-badge.polozeno {
+    background-color: #2ecc71;
+}

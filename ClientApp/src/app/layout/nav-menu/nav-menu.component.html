@@ -1,16 +1,32 @@
-<div class="nav-menu">
-    <div class="profile-section">
-      <div class="profile-picture">
-        <img [src]="profilePicture" alt="Profile Picture" />
-      </div>
-      <div class="student-name">
-        {{ firstName }} {{ lastName }}
-      </div>
+<!-- nav-menu.component.html -->
+<div class="navbar">
+    <div class="navbar-sidebar">
+        <div class="navbar-user-container">
+            <img class="navbar-profile" src="assets/profile.svg" alt="Profile" />
+            <div class="navbar-user">
+                <div class="navbar-username">Marko Markovic</div>
+                <div class="navbar-user-role">Student 3. godine</div>
+            </div>
+        </div>
+        <div class="navbar-links">
+            <a class="navbar-link" routerLink="/pocetna">
+                <i class="fas fa-home"></i> Pocetna
+            </a>
+            <a class="navbar-link" routerLink="/prijava-ispita">
+                <i class="fas fa-file-alt"></i> Prijava ispita
+            </a>
+            <a class="navbar-link active" routerLink="/moji-predmeti">
+                <i class="fas fa-list"></i> Moji predmeti
+            </a>
+            <a class="navbar-link" routerLink="/ispitni-rokovi">
+                <i class="fas fa-calendar-alt"></i> Ispitni rokovi
+            </a>
+            <a class="navbar-link" routerLink="/skolarina">
+                <i class="fas fa-dollar-sign"></i> Skolarina
+            </a>
+            <a class="navbar-link logout" routerLink="/logout">
+                <i class="fas fa-sign-out-alt"></i> Kraj rada
+            </a>
+        </div>
     </div>
-    <nav>
-      <ul>
-        <li><a routerLink="/home">Home</a></li>
-        <!-- Add more menu items here later -->
-      </ul>
-    </nav>
-  </div>
+</div>

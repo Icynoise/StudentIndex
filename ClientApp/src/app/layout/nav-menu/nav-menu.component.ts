@@ -10,7 +10,5 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./nav-menu.component.scss']
 })
 export class NavMenuComponent {
-  profilePicture = 'https://via.placeholder.com/150'; // Placeholder image
-  firstName = 'John';
-  lastName = 'Doe';
+
 }

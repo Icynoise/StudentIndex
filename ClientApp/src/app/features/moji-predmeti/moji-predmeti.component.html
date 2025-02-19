@@ -1,0 +1,27 @@
+<!-- moji-predmeti.component.html -->
+<section class="moji-predmeti-container">
+    <div class="content-section">
+        <h2>Predmeti</h2>
+        <p class="semestar">IV semestar</p>
+        <table class="predmeti-table">
+            <thead>
+                <tr>
+                    <th>Naziv predmeta</th>
+                    <th>ECTS</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let predmet of predmeti">
+                    <td>{{ predmet.naziv }}</td>
+                    <td>{{ predmet.ects }}</td>
+                    <td>
+                        <span class="status-badge" [ngClass]="{'polozeno': predmet.status === 'Polozeno'}">
+                            {{ predmet.status }}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

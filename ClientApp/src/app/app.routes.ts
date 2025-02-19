@@ -1,7 +1,13 @@
-import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter, Routes } from '@angular/router';
 
-export const routes: Routes = [
-    { path: 'home', component: HomeComponent },
-    { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
+
+const routes: Routes = [
+  { path: '', redirectTo: 'pocetna', pathMatch: 'full' }, // Redirect to 'pocetna'
+  { path: 'pocetna', loadComponent: () => import('./features/pocetna/pocetna.component').then(m => m.PocetnaComponent) },
+  { path: 'prijava-ispita', loadComponent: () => import('./features/prijava-ispita/prijava-ispita.component').then(m => m.PrijavaIspitaComponent) },
 ];
+
+export const appConfig: ApplicationConfig = {
+  providers: [provideRouter(routes)]
+};
