@@ -1,41 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\",
+  "WorkspaceRootPath": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\dijana boban djordje\\desktop\\studentindexapp\\studentindex\\studentindex.server\\webapi\\controllers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:webapi\\controllers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\dijana boban djordje\\desktop\\studentindexapp\\studentindex\\studentindex.server\\infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\dijana boban djordje\\desktop\\studentindexapp\\studentindex\\studentindex.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\dijana boban djordje\\desktop\\studentindexapp\\studentindex\\studentindex.server\\infrastructure\\data\\studentaplikacijacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\infrastructure\\data\\studentaplikacijacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:infrastructure\\data\\studentaplikacijacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\dijana boban djordje\\desktop\\studentindexapp\\studentindex\\studentindex.server\\core\\interfaces\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\ramicdj\\desktop\\studentindex\\studentindex\\studentindex.server\\global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\ramicdj\\desktop\\studentindex\\studentindex\\studentindex.server\\webapi\\controllers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:webapi\\controllers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\core\\interfaces\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:core\\interfaces\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\dijana boban djordje\\desktop\\studentindexapp\\studentindex\\studentindex.server\\core\\etities\\studenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\ramicdj\\desktop\\studentindex\\studentindex\\studentindex.server\\core\\etities\\studentstudijskiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:core\\etities\\studentstudijskiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\ramicdj\\desktop\\studentindex\\studentindex\\studentindex.server\\core\\etities\\studijskiprogrami.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:core\\etities\\studijskiprogrami.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\core\\etities\\studenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:core\\etities\\studenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\dijana boban djordje\\desktop\\studentindexapp\\studentindex\\studentindex.server\\core\\etities\\godine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\core\\etities\\godine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:core\\etities\\godine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\dijana boban djordje\\desktop\\studentindexapp\\studentindex\\studentindex.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\dijana boban djordje\\desktop\\studentindexapp\\studentindex\\studentindex.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -46,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,28 +70,63 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
+              "Title": "StudentStudijskiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Core\\Etities\\StudentStudijskiProgram.cs",
+              "RelativeDocumentMoniker": "Core\\Etities\\StudentStudijskiProgram.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Core\\Etities\\StudentStudijskiProgram.cs",
+              "RelativeToolTip": "Core\\Etities\\StudentStudijskiProgram.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T10:31:06.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StudijskiProgrami.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Core\\Etities\\StudijskiProgrami.cs",
+              "RelativeDocumentMoniker": "Core\\Etities\\StudijskiProgrami.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Core\\Etities\\StudijskiProgrami.cs",
+              "RelativeToolTip": "Core\\Etities\\StudijskiProgrami.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T10:31:04.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "global.json",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\global.json",
+              "RelativeDocumentMoniker": "global.json",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\global.json",
+              "RelativeToolTip": "global.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-20T09:56:26.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Controllers.cs",
-              "DocumentMoniker": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\WebApi\\Controllers.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\WebApi\\Controllers.cs",
               "RelativeDocumentMoniker": "WebApi\\Controllers.cs",
-              "ToolTip": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\WebApi\\Controllers.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\WebApi\\Controllers.cs",
               "RelativeToolTip": "WebApi\\Controllers.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAARAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-31T22:21:10.4Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Studenti.cs",
-              "DocumentMoniker": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Core\\Etities\\Studenti.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Core\\Etities\\Studenti.cs",
               "RelativeDocumentMoniker": "Core\\Etities\\Studenti.cs",
-              "ToolTip": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Core\\Etities\\Studenti.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Core\\Etities\\Studenti.cs",
               "RelativeToolTip": "Core\\Etities\\Studenti.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAYwB8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -87,47 +134,50 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "IStudentRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Core\\Interfaces\\IStudentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Core\\Interfaces\\IStudentRepository.cs",
               "RelativeDocumentMoniker": "Core\\Interfaces\\IStudentRepository.cs",
-              "ToolTip": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Core\\Interfaces\\IStudentRepository.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Core\\Interfaces\\IStudentRepository.cs",
               "RelativeToolTip": "Core\\Interfaces\\IStudentRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAkAAAAzAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T23:04:15.606Z"
+              "WhenOpened": "2025-01-31T23:04:15.606Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAAtAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T22:53:48.169Z"
+              "WhenOpened": "2025-01-31T22:53:48.169Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "StudentAplikacijaContext.cs",
-              "DocumentMoniker": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Infrastructure\\Data\\StudentAplikacijaContext.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Infrastructure\\Data\\StudentAplikacijaContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\StudentAplikacijaContext.cs",
-              "ToolTip": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Infrastructure\\Data\\StudentAplikacijaContext.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Infrastructure\\Data\\StudentAplikacijaContext.cs",
               "RelativeToolTip": "Infrastructure\\Data\\StudentAplikacijaContext.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAgwB4AAAAdAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T22:21:38.563Z"
+              "WhenOpened": "2025-01-31T22:21:38.563Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -135,23 +185,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "StudentRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Infrastructure\\Repositories\\StudentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Infrastructure\\Repositories\\StudentRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\StudentRepository.cs",
-              "ToolTip": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Infrastructure\\Repositories\\StudentRepository.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Infrastructure\\Repositories\\StudentRepository.cs",
               "RelativeToolTip": "Infrastructure\\Repositories\\StudentRepository.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwBsAAAAfAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBEAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T22:21:24.648Z"
+              "WhenOpened": "2025-01-31T22:21:24.648Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABoAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -159,11 +210,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Godine.cs",
-              "DocumentMoniker": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Core\\Etities\\Godine.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Core\\Etities\\Godine.cs",
               "RelativeDocumentMoniker": "Core\\Etities\\Godine.cs",
-              "ToolTip": "C:\\Users\\Dijana Boban Djordje\\Desktop\\StudentIndexApp\\StudentIndex\\StudentIndex.Server\\Core\\Etities\\Godine.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Core\\Etities\\Godine.cs",
               "RelativeToolTip": "Core\\Etities\\Godine.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -12,3 +12,4 @@ bin/
 obj/
 packages/
 **/*.Designer.cs
+global.json

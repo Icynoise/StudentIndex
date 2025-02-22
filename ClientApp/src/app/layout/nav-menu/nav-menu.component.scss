@@ -1,63 +1,85 @@
-/* nav-menu.component.css */
+/* General navbar styles */
 .navbar {
-    background-image: url("/assets/backGroundNavBar.png");
-    background-size: cover;
-    border-top-left-radius: 16px;
+    width: 250px; /* Adjust width as needed */
+    background-image: url("/assets/backGroundNavBar.png"); /* Restored background image */
+    background-size: cover; /* Ensure the background covers the navbar */
+    border-top-left-radius: 16px; /* Restored rounded corners */
     border-top-right-radius: 16px;
-    height: 100%; /* Full height of parent */
+    height: 100vh; /* Full height */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+    align-items: center; /* Center content horizontally */
+    padding: 1rem; /* Restored padding */
 }
 
-.navbar-user-container {
+/* Sidebar container */
+.navbar-sidebar {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: 48px;
+    height: 100%;
+    padding: 20px;
+}
+
+/* User profile container */
+.navbar-user-container {
+    display: flex;
+    flex-direction: column; /* Restored column layout */
+    align-items: center; /* Center content horizontally */
+    gap: 15px; /* Restored gap */
+    margin-top: 48px; /* Restored margin */
 }
 
 .navbar-profile {
-    width: 120px;
+    width: 120px; /* Restored larger profile image */
     height: 120px;
-    border-radius: 9999px;
+    border-radius: 9999px; /* Fully rounded */
 }
 
 .navbar-user {
-    text-align: center;
+    text-align: center; /* Restored text alignment */
 }
 
 .navbar-username {
-    color: black;
-    font-size: 21px;
-    font-weight: 300;
+    color: black; /* Restored text color */
+    font-size: 24px; /* Restored font size */
+    font-weight: 300; /* Restored font weight */
 }
 
 .navbar-user-role {
-    color: black;
-    font-size: 15px;
-    font-weight: 200;
+    color: black; /* Restored text color */
+    font-size: 15px; /* Restored font size */
+    font-weight: 200; /* Restored font weight */
 }
 
+/* Navigation links */
 .navbar-links {
-    margin-top: 2rem;
+    margin-top: 2rem; /* Restored margin */
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px; /* Restored gap */
+    flex: 1; /* Allows this container to grow and push the logout link to the bottom */
+    width: 100%;
 }
 
+/* nav-menu.component.css */
+.navbar-link i {  /* Or .nav-icon if you add the class */
+    margin-right: 7px; /* Adjust as needed */
+  }
+
+/* General link styles */
 .navbar-link {
-    color: black;
-    font-size: 20px;
-    font-weight: 300;
+    color: black; /* Restored text color */
+    font-size: 20px; /* Restored font size */
+    font-weight: 300; /* Restored font weight */
     cursor: pointer;
     display: flex;
     align-items: center;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Restored transition */
+    position: relative; /* Needed for ::before and ::after */
+    text-decoration: none; /* Ensure no underline */
 }
 
+/* Hover/active pseudo-elements */
 .navbar-link::before {
     content: "";
     position: absolute;
@@ -65,7 +87,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1); /* Restored hover background */
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: -1;
@@ -78,14 +100,14 @@
     bottom: -2px;
     width: 100%;
     height: 2px;
-    background-color: #F19E39;
+    background-color: #F19E39; /* Restored underline color */
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
 }
 
 .navbar-link:hover {
-    color: #F19E39;
+    color: #F19E39; /* Restored hover color */
 }
 
 .navbar-link:hover::before {
@@ -97,15 +119,17 @@
 }
 
 .navbar-link.active {
-    color: #F19E39;
+    color: #F19E39; /* Restored active color */
 }
 
 .navbar-link.active::after {
     transform: scaleX(1);
 }
 
+/* Logout link at the bottom */
 .navbar-link.logout {
-    margin-top: auto;
+    margin-top: auto; /* Or 30px, 40px, etc. - adjust as needed */
+    margin-bottom: 75px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     display: flex;
@@ -113,12 +137,13 @@
 }
 
 .navbar-link.logout:hover {
-    color: red;
+    color: red; /* Restored hover color */
 }
 
+/* Icon styling */
 .nav-icon {
-    width: 20px;
+    width: 20px; /* Restored icon size */
     height: 20px;
-    margin-right: 10px;
+    margin-right: 10px; /* Restored spacing */
     vertical-align: middle;
 }

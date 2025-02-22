@@ -25,4 +25,8 @@ export class MojiPredmetiComponent {
   getStatusClass(status: string): string {
     return status === "Polozeno" ? "status-passed" : "status-failed";
   }
+
+  getPredmet(){
+    // vracas predmete
+  }
 }
