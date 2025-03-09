@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace StudentIndex.Server.Core;
+namespace StudentIndex.Server.Domain;
 
 public partial class Godine
 {

@@ -1,8 +1,8 @@
-﻿using StudentIndex.Server.Core;
+﻿using StudentIndex.Server.Domain;
 using System;
 using System.Collections.Generic;
 
-namespace StudentIndex.Models;
+namespace StudentIndex.Server.Domain;
 
 public partial class StudentStudijskiProgram
 {

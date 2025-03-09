@@ -1,7 +1,7 @@
-﻿using StudentIndex.Models;
+﻿
 using System.ComponentModel.DataAnnotations;
 
-namespace StudentIndex.Server.Core;
+namespace StudentIndex.Server.Domain;
 
 
 public partial class Studenti

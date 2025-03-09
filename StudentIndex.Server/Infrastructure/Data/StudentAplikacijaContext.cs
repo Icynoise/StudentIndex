@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StudentIndex.Models;
-using StudentIndex.Server.Core;
+using StudentIndex.Server.Domain;
 
 namespace StudentIndex.Server.Infrastructure.Data;
 

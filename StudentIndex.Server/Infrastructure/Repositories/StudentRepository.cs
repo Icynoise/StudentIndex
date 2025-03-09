@@ -1,6 +1,6 @@
 ﻿using Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using StudentIndex.Server.Core;
+using StudentIndex.Server.Domain;
 using StudentIndex.Server.Infrastructure.Data;
 
 namespace StudentIndex.Server.Infrastructure.Repositories

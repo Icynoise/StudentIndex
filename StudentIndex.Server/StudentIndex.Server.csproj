@@ -16,7 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Bussines\StudentService\" />
+    <Folder Include="Application\Interfaces\" />
+    <Folder Include="Application\Services\" />
   </ItemGroup>
 
 </Project>

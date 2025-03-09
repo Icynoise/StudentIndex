@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-using StudentIndex.Server.Core;
+using StudentIndex.Server.Domain;
 namespace Core.Interfaces
 {
     public interface IStudentRepository
