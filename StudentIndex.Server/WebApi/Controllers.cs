@@ -1,5 +1,7 @@
 ﻿using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using StudentIndex.Server.Application.DTOs;
+using StudentIndex.Server.Application.Services;
 using System.Threading.Tasks;
 
 namespace StudentIndex.Server.WebApi
@@ -21,5 +23,19 @@ namespace StudentIndex.Server.WebApi
             var students = await _studentRepository.GetAllStudentsAsync();
             return Ok(students);
         }
+
+        [HttpGet("{studentId}/subjects")]
+        public async Task<ActionResult<IEnumerable<PredmetiDto>>> GetStudentSubjects(
+        int studentId,
+        [FromQuery] int yearId,
+        [FromQuery] int semesterId)
+            {
+            var subjects = await _studentRepository.GetStudentSubjectsByYearAndSemesterAsync(
+                studentId, yearId, semesterId);
+
+            return Ok(subjects);
+        }
+
+
     }
 }

@@ -2,7 +2,7 @@
 {
     public class PredmetiDto
     {
-        public string Naziv { get; set; }
+        public string? Naziv { get; set; }
 
         public short Ects { get; set; }
     }
