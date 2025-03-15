@@ -1,0 +1,444 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\webapi\\controllers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:webapi\\controllers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\infrastructure\\data\\studentaplikacijacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:infrastructure\\data\\studentaplikacijacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\ramicdj\\desktop\\studentindex\\studentindex\\studentindex.server\\application\\interfaces\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:application\\interfaces\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\ramicdj\\desktop\\studentindex\\studentindex\\studentindex.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\ramicdj\\desktop\\studentindex\\studentindex\\studentindex.server\\application\\interfaces\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:application\\interfaces\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\domain\\etities\\predmeti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:domain\\etities\\predmeti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\ramicdj\\desktop\\studentindex\\studentindex\\studentindex.server\\domain\\dtos\\predmetidto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:domain\\dtos\\predmetidto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|c:\\users\\ramicdj\\desktop\\studentindex\\studentindex\\studentindex.server\\application\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:application\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\domain\\etities\\studenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:domain\\etities\\studenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\studentindex.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:studentindex.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\domain\\etities\\predmetiuprogramima.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:domain\\etities\\predmetiuprogramima.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\domain\\etities\\studentispiti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:domain\\etities\\studentispiti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\domain\\etities\\semestri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:domain\\etities\\semestri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\domain\\etities\\godine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:domain\\etities\\godine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\domain\\etities\\studijskiprogrami.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:domain\\etities\\studijskiprogrami.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\domain\\etities\\studentstudijskiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:domain\\etities\\studentstudijskiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\domain\\etities\\poku\u0161ajiispitum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:domain\\etities\\poku\u0161ajiispitum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\domain\\etities\\osnovnestudije.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:domain\\etities\\osnovnestudije.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\domain\\etities\\ispiti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F120920-D956-4956-A08C-B56ABDE44A0B}|StudentIndex.Server.csproj|solutionrelative:domain\\etities\\ispiti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 24,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Application\\Mapping\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Application\\Mapping\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Application\\Mapping\\MappingProfile.cs",
+              "RelativeToolTip": "Application\\Mapping\\MappingProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T10:41:48.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IStudentService.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Application\\Interfaces\\IStudentService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IStudentService.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Application\\Interfaces\\IStudentService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IStudentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T10:34:32.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAACFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-13T09:26:36.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "global.json",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\global.json",
+              "RelativeDocumentMoniker": "global.json",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\global.json",
+              "RelativeToolTip": "global.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-13T09:22:28.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\WeatherForecast.cs",
+              "RelativeToolTip": "WeatherForecast.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T09:22:24.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "StudentIndex.Server",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\StudentIndex.Server.csproj",
+              "RelativeDocumentMoniker": "StudentIndex.Server.csproj",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\StudentIndex.Server.csproj",
+              "RelativeToolTip": "StudentIndex.Server.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-13T09:20:39.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentAplikacijaContext.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Infrastructure\\Data\\StudentAplikacijaContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Data\\StudentAplikacijaContext.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Infrastructure\\Data\\StudentAplikacijaContext.cs",
+              "RelativeToolTip": "Infrastructure\\Data\\StudentAplikacijaContext.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwFoAAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T08:52:16.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Semestri.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\Semestri.cs",
+              "RelativeDocumentMoniker": "Domain\\Etities\\Semestri.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\Semestri.cs",
+              "RelativeToolTip": "Domain\\Etities\\Semestri.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T07:41:34.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACIAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T14:33:05.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentService.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Application\\Services\\StudentService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\StudentService.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Application\\Services\\StudentService.cs",
+              "RelativeToolTip": "Application\\Services\\StudentService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAABjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T08:48:45.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PredmetiDto.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\DTOs\\PredmetiDto.cs",
+              "RelativeDocumentMoniker": "Domain\\DTOs\\PredmetiDto.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\DTOs\\PredmetiDto.cs",
+              "RelativeToolTip": "Domain\\DTOs\\PredmetiDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T07:39:39.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "StudijskiProgrami.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\StudijskiProgrami.cs",
+              "RelativeDocumentMoniker": "Domain\\Etities\\StudijskiProgrami.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\StudijskiProgrami.cs",
+              "RelativeToolTip": "Domain\\Etities\\StudijskiProgrami.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T07:17:00.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "StudentStudijskiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\StudentStudijskiProgram.cs",
+              "RelativeDocumentMoniker": "Domain\\Etities\\StudentStudijskiProgram.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\StudentStudijskiProgram.cs",
+              "RelativeToolTip": "Domain\\Etities\\StudentStudijskiProgram.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T07:16:42.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "StudentIspiti.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\StudentIspiti.cs",
+              "RelativeDocumentMoniker": "Domain\\Etities\\StudentIspiti.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\StudentIspiti.cs",
+              "RelativeToolTip": "Domain\\Etities\\StudentIspiti.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T07:16:38.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Studenti.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\Studenti.cs",
+              "RelativeDocumentMoniker": "Domain\\Etities\\Studenti.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\Studenti.cs",
+              "RelativeToolTip": "Domain\\Etities\\Studenti.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T07:16:29.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PredmetiUprogramima.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\PredmetiUprogramima.cs",
+              "RelativeDocumentMoniker": "Domain\\Etities\\PredmetiUprogramima.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\PredmetiUprogramima.cs",
+              "RelativeToolTip": "Domain\\Etities\\PredmetiUprogramima.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T07:16:26.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Predmeti.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\Predmeti.cs",
+              "RelativeDocumentMoniker": "Domain\\Etities\\Predmeti.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\Predmeti.cs",
+              "RelativeToolTip": "Domain\\Etities\\Predmeti.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T07:16:22.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Poku\u0161ajiIspitum.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\Poku\u0161ajiIspitum.cs",
+              "RelativeDocumentMoniker": "Domain\\Etities\\Poku\u0161ajiIspitum.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\Poku\u0161ajiIspitum.cs",
+              "RelativeToolTip": "Domain\\Etities\\Poku\u0161ajiIspitum.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T07:16:15.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "OsnovneStudije.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\OsnovneStudije.cs",
+              "RelativeDocumentMoniker": "Domain\\Etities\\OsnovneStudije.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\OsnovneStudije.cs",
+              "RelativeToolTip": "Domain\\Etities\\OsnovneStudije.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T07:16:08.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Ispiti.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\Ispiti.cs",
+              "RelativeDocumentMoniker": "Domain\\Etities\\Ispiti.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\Ispiti.cs",
+              "RelativeToolTip": "Domain\\Etities\\Ispiti.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T07:16:05.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Godine.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\Godine.cs",
+              "RelativeDocumentMoniker": "Domain\\Etities\\Godine.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Domain\\Etities\\Godine.cs",
+              "RelativeToolTip": "Domain\\Etities\\Godine.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T07:15:45.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StudentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Infrastructure\\Repositories\\StudentRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\StudentRepository.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Infrastructure\\Repositories\\StudentRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\StudentRepository.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAwwFwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T12:49:48.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Controllers.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\WebApi\\Controllers.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\WebApi\\Controllers.cs",
+              "RelativeToolTip": "WebApi\\Controllers.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T12:41:10.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IStudentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Application\\Interfaces\\IStudentRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IStudentRepository.cs",
+              "ToolTip": "C:\\Users\\ramicdj\\Desktop\\studentIndex\\StudentIndex\\StudentIndex.Server\\Application\\Interfaces\\IStudentRepository.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IStudentRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T11:47:11.264Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1981,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

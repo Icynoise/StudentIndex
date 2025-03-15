@@ -1,41 +1,29 @@
-﻿using Core.Interfaces;
+﻿// StudentIndex.Web/Controllers/StudentsController.cs
 using Microsoft.AspNetCore.Mvc;
-using StudentIndex.Server.Application.DTOs;
-using StudentIndex.Server.Application.Services;
-using System.Threading.Tasks;
+using StudentIndex.Application.Interfaces;
+using StudentIndex.Server.Domain.DTOs;
 
-namespace StudentIndex.Server.WebApi
+namespace StudentIndex.Web.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("api/[controller]")] // or [Route("api/students")]
     public class StudentsController : ControllerBase
     {
-        private readonly IStudentRepository _studentRepository;
+        private readonly IStudentService _studentService;
 
-        public StudentsController(IStudentRepository studentRepository)
+        public StudentsController(IStudentService studentService)
         {
-            _studentRepository = studentRepository;
+            _studentService = studentService;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetStudents()
-        {
-            var students = await _studentRepository.GetAllStudentsAsync();
-            return Ok(students);
-        }
-
-        [HttpGet("{studentId}/subjects")]
+        [HttpGet("{studentId}/moji-predmeti")]
         public async Task<ActionResult<IEnumerable<PredmetiDto>>> GetStudentSubjects(
-        int studentId,
-        [FromQuery] int yearId,
-        [FromQuery] int semesterId)
-            {
-            var subjects = await _studentRepository.GetStudentSubjectsByYearAndSemesterAsync(
-                studentId, yearId, semesterId);
-
+            int studentId,
+            [FromQuery] int yearId,
+            [FromQuery] int semesterId)
+        {
+            var subjects = await _studentService.GetStudentSubjectsAsync(studentId, yearId, semesterId);
             return Ok(subjects);
         }
-
-
     }
 }

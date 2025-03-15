@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using StudentIndex.Server.Application.DTOs;
-using StudentIndex.Server.Domain;
-namespace Core.Interfaces
+﻿using StudentIndex.Server.Domain;
+using StudentIndex.Server.Domain.DTOs;
+
+namespace StudentIndex.Server.Application.Interfaces
 {
     public interface IStudentRepository
     {
@@ -20,8 +19,8 @@ namespace Core.Interfaces
 
         // Delete a student by ID
         Task DeleteStudentAsync(int id);
-
-        Task<IEnumerable<PredmetiDto>> GetStudentSubjectsByYearAndSemesterAsync(
-        int studentId, int studijskiProgramId, int semestarId);
+     
+        Task<IEnumerable<PredmetiDto>> GetStudentSubjectsAsync(int studentId, int yearId, int semesterId);
+       
     }
 }

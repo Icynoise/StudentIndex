@@ -1,8 +1,9 @@
-﻿using Core.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using StudentIndex.Server.Application.DTOs;
+﻿using Microsoft.EntityFrameworkCore;
+using StudentIndex.Server.Application.Interfaces;
 using StudentIndex.Server.Domain;
+using StudentIndex.Server.Domain.DTOs;
 using StudentIndex.Server.Infrastructure.Data;
+using System.Runtime.CompilerServices;
 
 namespace StudentIndex.Server.Infrastructure.Repositories
 {
@@ -45,57 +46,48 @@ namespace StudentIndex.Server.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        // Delete a student by ID
-        public async Task DeleteStudentAsync(int id)
+        public Task DeleteStudentAsync(int id)
         {
-            var student = await _context.Studenti.FindAsync(id);
-            if (student != null)
-            {
-                _context.Studenti.Remove(student);
-                await _context.SaveChangesAsync();
-            }
+            throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<PredmetiDto>> GetStudentSubjectsByYearAndSemesterAsync(int studentId, int studijskiProgramId, int semestarId)
+        public async Task<IEnumerable<PredmetiDto>> GetStudentSubjectsAsync(int studentId, int yearId, int semesterId)
         {
-            // Get the latest exam result for each subject
-            var latestExamResults = _context.StudentIspiti
-                .Where(si => si.StudentId == studentId)
-                .GroupBy(si => si.IspitId)
-                .Select(g => g.OrderByDescending(si => si.Pokušaji).FirstOrDefault());
+            var query = @"
+SELECT 
+    p.PredmetId,
+    p.Naziv,
+    p.ECTS,
+    CASE 
+        WHEN si.RezultatIspita IS NULL THEN 'Nema izlazaka na ispit'
+        WHEN si.RezultatIspita > 5 THEN 'Polozeno'
+        ELSE 'Nepolozeno'
+    END AS Status
+FROM 
+    dbo.Studenti s
+    LEFT JOIN dbo.StudentStudijskiProgram ssp ON ssp.StudentId = s.StudentId
+    LEFT JOIN dbo.PredmetiUProgramima pup ON pup.StudijskiProgramId = ssp.StudijskiProgramId
+    LEFT JOIN dbo.Predmeti p ON pup.PredmetId = p.PredmetId
+    LEFT JOIN dbo.Semestri se ON se.SemestarId = pup.SemestarId
+    LEFT JOIN dbo.Ispiti i ON i.PredmetId = p.PredmetId
+    LEFT JOIN (
+        SELECT 
+            StudentId, 
+            IspitId, 
+            RezultatIspita,
+            ROW_NUMBER() OVER (PARTITION BY IspitId ORDER BY [Pokušaji] DESC) AS rn
+        FROM dbo.StudentIspiti
+        WHERE StudentId = @p0
+    ) si ON si.IspitId = i.IspitId AND si.StudentId = s.StudentId AND si.rn = 1
+WHERE 
+    s.StudentId = @p0
+    AND se.SemestarId = @p1
+ORDER BY 
+    p.Naziv";
 
-            // Main query
-            var query = from s in _context.Studenti
-                        join ssp in _context.StudentStudijskiProgram
-                            on s.StudentId equals ssp.StudentId
-                        join pup in _context.PredmetiUprogramima
-                            on ssp.StudijskiProgramId equals pup.StudijskiProgramId
-                        join p in _context.Predmeti
-                            on pup.PredmetId equals p.PredmetId
-                        join se in _context.Semestri
-                            on pup.SemestarId equals se.SemestarId
-                        join i in _context.Ispiti
-                            on p.PredmetId equals i.PredmetId into examGroup
-                        from i in examGroup.DefaultIfEmpty()
-                            // Left join with our latest exam results
-                        join si in latestExamResults
-                            on new { IspitId = i.IspitId, StudentId = s.StudentId } equals
-                               new { IspitId = si.IspitId, StudentId = si.StudentId } into examResults
-                        from si in examResults.DefaultIfEmpty()
-                        where s.StudentId == studentId
-                            && ssp.StudijskiProgramId == studijskiProgramId
-                            && se.SemestarId == semestarId
-                        orderby p.Naziv
-                        select new StudentSubjectWithStatus
-                        {
-                            PredmetId = p.PredmetId,
-                            Naziv = p.Naziv,
-                            ECTS = p.ECTS,
-                            Status = si == null ? "Nema izlazaka na ispit" :
-                                     si.RezultatIspita > 5 ? "Polozeno" : "Nepolozeno"
-                        };
-
-            return await query.ToListAsync();
+            return await _context.Database
+                .SqlQuery<PredmetiDto>(FormattableStringFactory.Create(query, studentId, semesterId))
+                .ToListAsync();
         }
     }
 }

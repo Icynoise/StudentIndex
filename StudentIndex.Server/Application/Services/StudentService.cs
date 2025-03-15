@@ -1,34 +1,23 @@
-﻿using StudentIndex.Server.Application.DTOs;
-using StudentIndex.Server.Infrastructure.Repositories;
+﻿// StudentIndex.Application/Services/StudentService.cs
+using StudentIndex.Application.Interfaces;
+using StudentIndex.Server.Application.Interfaces;
+using StudentIndex.Server.Domain.DTOs;
 
-namespace StudentIndex.Server.Application.Services
+namespace StudentIndex.Application.Services
 {
-    public class StudentService
+    public class StudentService : IStudentService
     {
-        StudentRepository _studentRepository;
-        private readonly IMapper _mapper;
+        private readonly IStudentRepository _studentRepository;
 
-        StudentService(StudentRepository studentRepository)
+        public StudentService(IStudentRepository studentRepository)
         {
             _studentRepository = studentRepository;
-            _mapper = mapper;
         }
 
-        // Application/Services/StudentService.cs
-        public async Task<IEnumerable<PredmetiDto>> GetStudentSubjectsByYearAndSemesterAsync(
-            int studentId, int yearId, int semesterId)
+        public async Task<IEnumerable<PredmetiDto>> GetStudentSubjectsAsync(int studentId, int yearId, int semesterId)
         {
-            // Validate input parameters
-            if (studentId <= 0 || yearId <= 0 || semesterId <= 0)
-                throw new ArgumentException("Invalid parameters");
-
-            // Get student subjects using repository
-            var subjects = await _studentRepository.GetStudentSubjectsByYearAndSemesterAsync(
-                studentId, yearId, semesterId);
-
-            // Map domain entities to DTOs
-            return subjects;
+            // Delegate to the repository (data access layer)
+            return await _studentRepository.GetStudentSubjectsAsync(studentId, yearId, semesterId);
         }
-
     }
 }

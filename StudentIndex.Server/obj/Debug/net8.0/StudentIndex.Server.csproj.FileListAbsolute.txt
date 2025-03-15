@@ -507,3 +507,5 @@ C:\Users\ramicdj\Desktop\studentIndex\StudentIndex\StudentIndex.Server\obj\Debug
 C:\Users\ramicdj\Desktop\studentIndex\StudentIndex\StudentIndex.Server\obj\Debug\net8.0\StudentIndex.Server.pdb
 C:\Users\ramicdj\Desktop\studentIndex\StudentIndex\StudentIndex.Server\obj\Debug\net8.0\StudentIndex.Server.genruntimeconfig.cache
 C:\Users\ramicdj\Desktop\studentIndex\StudentIndex\StudentIndex.Server\obj\Debug\net8.0\ref\StudentIndex.Server.dll
+C:\Users\ramicdj\Desktop\studentIndex\StudentIndex\StudentIndex.Server\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\ramicdj\Desktop\studentIndex\StudentIndex\StudentIndex.Server\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

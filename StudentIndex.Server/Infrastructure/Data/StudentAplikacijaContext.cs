@@ -1,10 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StudentIndex.Server.Domain;
+using StudentIndex.Server.Domain.Etities;
+
 
 namespace StudentIndex.Server.Infrastructure.Data;
 
 public partial class StudentAplikacijaContext : DbContext
 {
+    public StudentAplikacijaContext()
+    {
+    }
 
     public StudentAplikacijaContext(DbContextOptions<StudentAplikacijaContext> options)
         : base(options)
@@ -17,11 +22,13 @@ public partial class StudentAplikacijaContext : DbContext
 
     public virtual DbSet<OsnovneStudije> OsnovneStudije { get; set; }
 
-    public virtual DbSet<PokušajiIspitum> PokusajiIspita { get; set; }
+    public virtual DbSet<PokušajiIspitum> PokušajiIspita { get; set; }
 
     public virtual DbSet<Predmeti> Predmeti { get; set; }
 
     public virtual DbSet<PredmetiUprogramima> PredmetiUprogramima { get; set; }
+
+    public virtual DbSet<Semestri> Semestri { get; set; }
 
     public virtual DbSet<StudentIspiti> StudentIspiti { get; set; }
 
@@ -30,6 +37,9 @@ public partial class StudentAplikacijaContext : DbContext
     public virtual DbSet<Studenti> Studenti { get; set; }
 
     public virtual DbSet<StudijskiProgrami> StudijskiProgrami { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        => optionsBuilder.UseSqlServer("Server=RAMICDJ-LAP\\MSSQLSERVER01;Database=StudentAplikacija;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -107,10 +117,23 @@ public partial class StudentAplikacijaContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__PredmetiU__Predm__52593CB8");
 
+            entity.HasOne(d => d.Semestar).WithMany(p => p.PredmetiUprogramimas)
+                .HasForeignKey(d => d.SemestarId)
+                .HasConstraintName("FK_PredmetiUProgramima_Semestri");
+
             entity.HasOne(d => d.StudijskiProgram).WithMany(p => p.PredmetiUprogramimas)
                 .HasForeignKey(d => d.StudijskiProgramId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__PredmetiU__Studi__5165187F");
+        });
+
+        modelBuilder.Entity<Semestri>(entity =>
+        {
+            entity.HasKey(e => e.SemestarId).HasName("PK__Semestri__8D4B7201649ECD86");
+
+            entity.ToTable("Semestri");
+
+            entity.Property(e => e.NazivSemestra).HasMaxLength(100);
         });
 
         modelBuilder.Entity<StudentIspiti>(entity =>

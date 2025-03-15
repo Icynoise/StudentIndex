@@ -9,9 +9,11 @@ public partial class Predmeti
 
     public string Naziv { get; set; } = null!;
 
-    public string? Opis { get; set; }
+    public string Opis { get; set; } = null!;
 
     public short Ects { get; set; }
+
+    public string Status { get; set; } = null!;
 
     public virtual ICollection<Ispiti> Ispitis { get; set; } = new List<Ispiti>();
 

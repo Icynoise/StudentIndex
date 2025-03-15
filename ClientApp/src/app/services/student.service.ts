@@ -15,5 +15,10 @@ export class StudentService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+  getStudentSubjects(studentId: number, yearId: number, semesterId: number): Observable<any[]> {
+    return this.http.get<any[]>(
+      `${this.apiUrl}/${studentId}/moji-predmeti?yearId=${yearId}&semesterId=${semesterId}`
+    );
+  }
 
 }
