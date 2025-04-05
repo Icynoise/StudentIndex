@@ -1,0 +1,112 @@
+// src/app/prijava-ispita/prijava-ispita.component.scss
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .form-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  
+    label {
+      display: block;
+      font-size: 14px;
+      color: #4a4a4a;
+      margin-bottom: 5px;
+    }
+  
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #e6f4e6; // Light green background, matching the image
+      border: none;
+      border-radius: 5px;
+      box-sizing: border-box;
+  
+      &:focus {
+        outline: none;
+        background-color: #d9ecd9; // Slightly darker green on focus
+      }
+    }
+  }
+  
+  .two-column {
+    display: flex;
+    gap: 20px;
+  
+    .column {
+      flex: 1;
+  
+      label {
+        margin-bottom: 5px;
+      }
+  
+      .form-control {
+        width: 100%;
+      }
+    }
+  }
+  
+  .terms {
+    label {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #4a4a4a;
+  
+      input[type="checkbox"] {
+        margin-right: 10px;
+        accent-color: #28a745; // Green checkbox, matching the image
+      }
+    }
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff4d4d; // Red button, matching the image
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #e64444; // Slightly darker red on hover
+    }
+  
+    &:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+  }
+  
+  .alert {
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }

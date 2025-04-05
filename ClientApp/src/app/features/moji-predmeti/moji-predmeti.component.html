@@ -1,0 +1,46 @@
+<section class="moji-predmeti-container">
+    <div class="content-section">
+      <h2>Predmeti</h2>
+      <div class="semestar">
+        <label for="semestar-select">Semestar: </label>
+        <select
+          id="semestar-select"
+          [(ngModel)]="selectedSemesterId"
+          (ngModelChange)="onSemesterChange()"
+        >
+          <option *ngFor="let semester of semesters" [value]="semester.id">
+            {{ semester.name }}
+          </option>
+        </select>
+      </div>
+  
+      <!-- Show loading message -->
+      <div *ngIf="loading" class="loading">Učitavanje...</div>
+  
+      <!-- Show table only when not loading -->
+      <table *ngIf="!loading" class="predmeti-table">
+        <thead>
+          <tr>
+            <th>Naziv predmeta</th>
+            <th>ECTS</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let predmet of predmeti">
+            <td>{{ predmet.naziv }}</td>
+            <td>{{ predmet.ects }}</td>
+            <td>
+              <span class="status-badge" [ngClass]="{'polozeno': predmet.status === 'Polozeno'}">
+                {{ predmet.status }}
+              </span>
+            </td>
+          </tr>
+          <!-- Show message if no subjects -->
+          <tr *ngIf="predmeti.length === 0">
+            <td colspan="3" style="text-align: center;">Nema predmeta za ovaj semestar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>

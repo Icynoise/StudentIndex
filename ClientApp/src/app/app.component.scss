@@ -1,0 +1,37 @@
+/* src/app/app.component.css */
+.app-container {
+  display: flex; /* Use flexbox for layout */
+  min-height: 100vh; /* Full viewport height */
+}
+
+app-nav-menu {
+  flex: 0 0 300px; /* Navbar takes 300px width and doesn't grow or shrink */
+  height: 100vh; /* Full viewport height */
+  position: sticky; /* Sticky positioning */
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.content-container {
+  flex: 1; /* Take remaining space */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  min-height: 100vh; /* Full viewport height */
+  background-color: #f9f9f9; /* Light background for content */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column; /* Stack vertically on smaller screens */
+  }
+
+  app-nav-menu {
+    flex: 0 0 auto; /* Allow navbar to shrink */
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  .content-container {
+    min-height: auto; /* Adjust height for smaller screens */
+  }
+}

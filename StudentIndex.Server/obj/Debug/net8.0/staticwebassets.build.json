@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "NEfLprz0dIY2awovPr3RWVZfHlmfGlB4ms8R0u+nk/k=",
+  "Source": "StudentIndex.Server",
+  "BasePath": "_content/StudentIndex.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

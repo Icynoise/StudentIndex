@@ -1,0 +1,32 @@
+<div class="login-container">
+  <div class="background-image"></div>
+  <div class="login-form">
+    <h2>Student login</h2>
+    <form #loginForm="ngForm">
+      <div class="input-group">
+        <i class="fas fa-user icon"></i>
+        <input
+          type="email"
+          placeholder="Email ID"
+          name="email"
+          [(ngModel)]="email"
+          required
+          #emailInput="ngModel"
+        >
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock icon"></i>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          [(ngModel)]="password"
+          required
+          #passwordInput="ngModel"
+        >
+      </div>
+      <button type="submit" (click)="login()" [disabled]="loginForm.invalid">log in</button>
+      <div *ngIf="error" class="error">{{ error }}</div>
+    </form>
+  </div>
+</div>

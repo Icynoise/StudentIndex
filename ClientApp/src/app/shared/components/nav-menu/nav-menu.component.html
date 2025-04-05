@@ -1,0 +1,28 @@
+<div class="navbar">
+    <div class="navbar-sidebar">
+        <div class="navbar-user-container">
+            <img class="navbar-profile" src="assets/profile.svg" alt="Profile" />
+            <div class="navbar-user">
+                <div class="navbar-username">{{ime}} {{prezime}}</div>
+                <div class="navbar-user-role">{{nazivStudijskiProgram}}</div>
+            </div>
+        </div>
+        <div class="navbar-links">
+            <a class="navbar-link" routerLink="/pocetna" routerLinkActive="active">
+                <i class="fas fa-home"></i> Pocetna
+            </a>
+            <a *ngIf="authService.isLoggedIn()" class="navbar-link" routerLink="/prijava-ispita" routerLinkActive="active">
+                <i class="fas fa-file-alt"></i> Prijava ispita
+            </a>
+            <a *ngIf="authService.isLoggedIn()" class="navbar-link" routerLink="/moji-predmeti" routerLinkActive="active">
+                <i class="fas fa-list"></i> Moji predmeti
+            </a>
+            <a *ngIf="authService.isLoggedIn()" class="navbar-link" routerLink="/ispitni-rokovi" routerLinkActive="active">
+                <i class="fas fa-calendar-alt"></i> Ispitni rokovi
+            </a>
+            <a *ngIf="authService.isLoggedIn()" class="navbar-link logout" (click)="logout()">
+                <i class="fas fa-sign-out-alt"></i> Kraj rada
+            </a>
+        </div>
+    </div>
+</div>

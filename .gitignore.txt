@@ -1,0 +1,54 @@
+# Build results
+bin/
+obj/
+out/
+dist/
+build/
+*.log
+
+# User-specific
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+**/.vs/
+*.suo
+*.user
+*.vspscc
+*.vssscc
+*.dbmdl
+*.pdb
+*.cache
+*.db
+*.bak
+
+# NuGet
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# Others
+*.dll
+*.exe
+*.log
+*.tgz
+
+# Angular
+node_modules/
+.angular/
+.env
+.env.*.local
+*.tsbuildinfo
+
+# Ignore designer files
+**/*.Designer.cs
+
+# Ignore launch settings
+Properties/launchSettings.json

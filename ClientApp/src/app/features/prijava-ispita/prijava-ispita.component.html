@@ -1,0 +1,70 @@
+<!-- src/app/prijava-ispita/prijava-ispita.component.html -->
+<div class="form-container">
+    <h2 class="form-title">Prijava Ispita</h2>
+    <form (ngSubmit)="onSubmit()">
+      <!-- Datum -->
+      <div class="form-group">
+        <label>Datum</label>
+        <input type="text" class="form-control" [(ngModel)]="formData.todaysDate" name="todaysDate" readonly />
+      </div>
+  
+      <!-- Ime and Prezime (two-column layout) -->
+      <div class="form-group two-column">
+        <div class="column">
+          <label>Ime</label>
+          <input type="text" class="form-control" [(ngModel)]="formData.ime" name="ime" readonly />
+        </div>
+        <div class="column">
+          <label>Prezime</label>
+          <input type="text" class="form-control" [(ngModel)]="formData.prezime" name="prezime" readonly />
+        </div>
+      </div>
+  
+      <!-- Broj Indexa -->
+      <div class="form-group">
+        <label>Broj Indexa</label>
+        <input type="text" class="form-control" [(ngModel)]="formData.brojIndexa" name="brojIndexa" readonly />
+      </div>
+  
+      <!-- Studijski Program -->
+      <div class="form-group">
+        <label>Studijski Program</label>
+        <input type="text" class="form-control" [(ngModel)]="formData.studijskiProgramNaziv" name="studijskiProgram" readonly />
+      </div>
+  
+      <!-- Nastavni Predmet (Dropdown) -->
+      <div class="form-group">
+        <label>Nastavni Predmet</label>
+        <select class="form-control" [(ngModel)]="formData.selectedPredmetId" name="selectedPredmetId" (change)="onPredmetChange()" required>
+            <option [ngValue]="null" disabled selected>Izaberite predmet</option>
+            <option *ngFor="let exam of availableExams" [ngValue]="exam.ispitId">
+              {{ exam.predmetNaziv }}
+            </option>
+          </select>
+      </div>
+  
+      <!-- Datum Ispita -->
+      <div class="form-group">
+        <label>Datum Ispita</label>
+        <input
+          type="text"
+          class="form-control"
+          [value]="formData.datumIspita ? (formData.datumIspita | date:'dd.MM.yyyy') : 'Izaberite predmet'"
+          name="datumIspita"
+          readonly
+        />
+      </div>
+      <!-- Submit Button -->
+      <button type="submit" class="btn-submit" [disabled]="!formData.selectedPredmetId">
+        Prijavi Ispit
+      </button>
+    </form>
+  
+    <!-- Success/Error Messages -->
+  <div *ngIf="errorMessage" class="alert alert-error">
+    {{ errorMessage }}
+  </div>
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+</div>

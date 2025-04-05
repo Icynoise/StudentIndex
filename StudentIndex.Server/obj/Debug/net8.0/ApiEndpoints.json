@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "StudentIndex.Server.WebApi.StudentsController",
+    "Method": "GetStudents",
+    "RelativePath": "api/Students",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

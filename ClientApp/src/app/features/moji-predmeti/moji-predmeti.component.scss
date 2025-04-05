@@ -1,0 +1,160 @@
+/* moji-predmeti.component.scss */
+
+/* Container for the entire component */
+.moji-predmeti-container {
+    padding: 1.5rem;
+    background-color: #f9f9f9; /* Light background for contrast */
+    height: 100%; /* Full height of parent */
+    overflow-y: auto; /* Enable scrolling if content overflows (fix: 'none' is not a valid value) */
+  }
+  
+  /* Main content section */
+  .content-section {
+    background: #ffffff; /* White background for the card */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 900px; /* Constrain width for readability */
+    margin: 0 auto; /* Center the container */
+    text-align: center; /* Center-align text (e.g., the heading) */
+  }
+  
+  /* Heading style (optional, for consistency) */
+  .content-section h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  /* Semester dropdown section */
+  .semestar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between label and dropdown */
+    margin-bottom: 1.5rem;
+    color: #7f8c8d; /* Muted color for the label */
+    font-size: 1.2rem; /* Slightly smaller than before for balance */
+  }
+  
+  .semestar label {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .semestar select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease; /* Smooth transition for focus state */
+  }
+  
+  .semestar select:focus {
+    outline: none;
+    border-color: #2ecc71; /* Highlight border on focus */
+  }
+  
+  /* Table styling */
+  .predmeti-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    table-layout: fixed; /* Enforce fixed column widths for consistent layout */
+  }
+  
+  /* Table headers and cells */
+  .predmeti-table th,
+  .predmeti-table td {
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: left; /* Default left alignment */
+  }
+  
+  /* Column widths */
+  .predmeti-table th:nth-child(1),
+  .predmeti-table td:nth-child(1) {
+    width: 60%; /* Naziv predmeta - 60% of table width */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+  }
+  
+  .predmeti-table th:nth-child(2),
+  .predmeti-table td:nth-child(2) {
+    width: 20%; /* ECTS - 20% of table width */
+    text-align: center; /* Center-align ECTS */
+  }
+  
+  .predmeti-table th:nth-child(3),
+  .predmeti-table td:nth-child(3) {
+    width: 20%; /* Status - 20% of table width */
+    text-align: center; /* Center-align Status */
+  }
+  
+  /* Table header styling */
+  .predmeti-table th {
+    background-color: #f8f9fa; /* Light gray background for headers */
+    color: #495057; /* Muted text color */
+    font-weight: 500; /* Medium weight for headers */
+    text-transform: uppercase; /* Uppercase for a polished look */
+    font-size: 0.9rem; /* Slightly smaller for headers */
+  }
+  
+  /* Table row styling */
+  .predmeti-table tr {
+    border-bottom: 1px solid #e9ecef; /* Subtle row separator */
+  }
+  
+  .predmeti-table tr:last-child {
+    border-bottom: none; /* Remove border from last row */
+  }
+  
+  /* Hover effect for rows (optional, for better UX) */
+  .predmeti-table tbody tr:hover {
+    background-color: #f8f9fa; /* Light hover effect */
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Status badge styling */
+  .status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #e74c3c; /* Red for "Nema izlazaka na ispit" */
+    display: inline-block; /* Ensure badge stays centered */
+    min-width: 120px; /* Ensure consistent width for badges */
+    text-align: center; /* Center text inside badge */
+  }
+  
+  /* Passed status badge */
+  .status-badge.polozeno {
+    background-color: #2ecc71; /* Green for "Polozeno" */
+  }
+  
+  /* Loading state */
+  .loading {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+  
+  /* Error state */
+  .error {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+  
+  /* Optional: Style for empty state message */
+  .predmeti-table td[colspan="3"] {
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 2rem;
+  }
