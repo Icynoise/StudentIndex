@@ -4,7 +4,7 @@ using StudentIndex.Server.Application.Interfaces;
 using StudentIndex.Server.Domain.DTOs;
 using System.Security.Claims;
 
-namespace YourApp.API.Controllers
+namespace StudentIndex.Server.WebApi
 {
 
     [Route("api/[controller]")]

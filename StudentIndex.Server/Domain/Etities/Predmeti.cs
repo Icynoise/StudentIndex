@@ -18,19 +18,6 @@ public partial class Predmeti
     public string? RezultatIspita { get; set; }
 
 
-    // Example behavior
-    public string GetStatus()
-    {
-        if (string.IsNullOrEmpty(RezultatIspita))
-            return "Nema izlazaka na ispit";
-
-        if (int.TryParse(RezultatIspita, out int rezultat))
-            return rezultat > 5 ? "Polozeno" : "Nepolozeno";
-
-        return "Nevalidan unos";
-    }
-
-
     public virtual ICollection<Ispiti> Ispitis { get; set; } = new List<Ispiti>();
 
     public virtual ICollection<PredmetiUprogramima> PredmetiUprogramimas { get; set; } = new List<PredmetiUprogramima>();

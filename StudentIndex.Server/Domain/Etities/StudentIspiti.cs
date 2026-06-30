@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using StudentIndex.Server.Domain.Constants;
 
 namespace StudentIndex.Server.Domain;
 
@@ -13,7 +14,7 @@ public partial class StudentIspiti
 
     public string? RezultatIspita { get; set; }
 
-    public string Status { get; set; } = "Na Cekanju";
+    public string Status { get; set; } = Constants.StatusIspita.NaCekanju;
 
     public virtual Ispiti? Ispit { get; set; }
 

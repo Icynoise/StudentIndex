@@ -1,9 +1,10 @@
-﻿using StudentIndex.Server.Domain;
+using StudentIndex.Server.Domain;
 
 namespace StudentIndex.Server.Application.Interfaces
 {
     public interface IStudentRepository
     {
-        public Task<Studenti> GetByUserId(int userId);
+        Task<Studenti?> GetByStudentIdAsync(int studentId);
+        Task AddAsync(Studenti student);
     }
 }

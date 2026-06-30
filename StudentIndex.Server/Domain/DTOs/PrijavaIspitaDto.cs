@@ -7,7 +7,5 @@
         public string? Prezime { get; set; }
         public string? BrojIndexa { get; set; }
         public string? StudijskiProgramNaziv { get; set; }
-        public DateTime DatumIspita { get; set; }
-        public int SelectedPredmetId { get; set; }
     }
 }

@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using StudentIndex.Server.Application.Interfaces;
+using StudentIndex.Server.Domain.DTOs;
 
 namespace StudentIndex.Server.WebApi
 {
@@ -16,11 +17,11 @@ namespace StudentIndex.Server.WebApi
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(string email, string password, string role, string ime, string prezime, string emailStudent, string telefon, DateOnly datumRodjenja, string status)
+        public async Task<IActionResult> Register([FromBody] RegisterStudentRequest request)
         {
-            var result = await _authService.RegisterAsync(email, password, role, ime, prezime, emailStudent, telefon, datumRodjenja, status);
+            var result = await _authService.RegisterAsync(request);
             if (result.Succeeded)
-                return Ok("User created with role: " + role);
+                return Ok("User created with role: " + request.Role);
             return BadRequest(result.Errors);
         }
 

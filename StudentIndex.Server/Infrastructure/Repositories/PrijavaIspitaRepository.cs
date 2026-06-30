@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using StudentIndex.Server.Application.Interfaces;
 using StudentIndex.Server.Domain;
+using StudentIndex.Server.Domain.Constants;
 using StudentIndex.Server.Infrastructure.Data;
 
 namespace StudentIndex.Server.Infrastructure.Repositories
@@ -17,10 +18,6 @@ namespace StudentIndex.Server.Infrastructure.Repositories
         public async Task AddAsync(StudentIspiti studentIspit)
         {
             _context.StudentIspiti.Add(studentIspit);
-        }
-
-        public async Task SaveChangesAsync()
-        {
             await _context.SaveChangesAsync();
         }
 
@@ -29,7 +26,7 @@ namespace StudentIndex.Server.Infrastructure.Repositories
             return await _context.StudentIspiti
                 .AnyAsync(si => si.StudentId == studentId
                              && si.IspitId == ispitId
-                             && si.Status == "Na Cekanju");
+                             && si.Status == StatusIspita.NaCekanju);
         }
     }
 }

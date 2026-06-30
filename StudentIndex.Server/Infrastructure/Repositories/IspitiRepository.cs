@@ -14,7 +14,7 @@ namespace StudentIndex.Server.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Ispiti> GetByIdAsync(int ispitId)
+        public async Task<Ispiti?> GetByIdAsync(int ispitId)
         {
             return await _context.Ispiti
                 .Include(i => i.Predmet)

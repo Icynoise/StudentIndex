@@ -1,17 +1,14 @@
-// src/app/prijava-ispita/prijava-ispita.component.ts
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel
-import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule for HTTP requests
+import { FormsModule } from '@angular/forms';
 import { DostupniIspiti, IspitPrijava } from '../../core/models/ispitPrijava.model';
 import { IspitiService } from '../../core/services/ispitiPrijava.service';
 import { CommonModule, DatePipe } from '@angular/common';
-import { __values } from 'tslib';
 
 @Component({
   selector: 'app-prijava-ispita',
   standalone: true,
-  imports: [FormsModule, HttpClientModule, CommonModule],
-  providers: [DatePipe], // Add this line
+  imports: [FormsModule, CommonModule],
+  providers: [DatePipe],
   templateUrl: './prijava-ispita.component.html',
   styleUrl: './prijava-ispita.component.scss'
 })
@@ -42,7 +39,7 @@ export class PrijavaIspitaComponent implements OnInit {
         this.formData = {
           ...data,
           todaysDate: new Date(data.todaysDate).toLocaleDateString(),
-          selectedPredmetId: null, // Ensure this is null even after loading data
+          selectedPredmetId: null,
           datumIspita: null
         };
       },
@@ -55,10 +52,7 @@ export class PrijavaIspitaComponent implements OnInit {
   loadAvailableExams(): void {
     this.ispitiService.getAvailableExams().subscribe({
       next: (exams) => {
-        this.availableExams = exams.map(exam => ({
-          ...exam,
-          datumIspita: exam.datumIspita
-        }));
+        this.availableExams = exams;
       },
       error: (err) => {
         this.errorMessage = 'Failed to load available exams: ' + err.error;
@@ -67,9 +61,11 @@ export class PrijavaIspitaComponent implements OnInit {
   }
 
   onPredmetChange(): void {
-    const selectedExam = this.availableExams.find(exam => exam.ispitId === Number(this.formData?.selectedPredmetId));
+    const selectedExam = this.availableExams.find(
+      exam => exam.ispitId === Number(this.formData?.selectedPredmetId)
+    );
     if (selectedExam && this.formData) {
-        this.formData.datumIspita = selectedExam.datumIspita;
+      this.formData.datumIspita = selectedExam.datumIspita;
     }
   }
 
@@ -84,9 +80,9 @@ export class PrijavaIspitaComponent implements OnInit {
 
     this.ispitiService.registerForExam(this.formData.selectedPredmetId).subscribe({
       next: (response) => {
-        this.successMessage = response.message || 'Ispit uspešno prijavljen!';
-        this.formData!.selectedPredmetId = undefined;
-        this.formData!.datumIspita = undefined;
+        this.successMessage = response.message || 'Ispit uspješno prijavljen!';
+        this.formData!.selectedPredmetId = null;
+        this.formData!.datumIspita = null;
       },
       error: (err) => {
         this.errorMessage = 'Greška prilikom prijave ispita: ' + err.error;

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using StudentIndex.Server.Domain;
 using StudentIndex.Server.Domain.Etities;
+using StudentIndex.Server.Infrastructure.Identity;
 
 namespace StudentIndex.Server.Infrastructure.Data;
 

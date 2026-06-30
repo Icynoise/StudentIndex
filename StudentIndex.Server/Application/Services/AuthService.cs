@@ -1,57 +1,67 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using StudentIndex.Server.Application.Interfaces;
 using StudentIndex.Server.Domain;
 using StudentIndex.Server.Domain.DTOs;
-using StudentIndex.Server.Infrastructure.Data;
+using StudentIndex.Server.Infrastructure.Identity;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace StudentIndex.Server.Infrastructure.Services
+namespace StudentIndex.Server.Application.Services
 {
     public class AuthService : IAuthService
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IStudentRepository _studentRepository;
         private readonly string _jwtSecret;
-        private readonly StudentAplikacijaContext _context;
 
-        public AuthService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, StudentAplikacijaContext context)
+        public AuthService(
+            UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager,
+            IStudentRepository studentRepository,
+            IConfiguration configuration)
         {
             _userManager = userManager;
             _roleManager = roleManager;
-            _jwtSecret = configuration["JwtSettings:Secret"] ?? throw new ArgumentNullException(nameof(configuration), "JWT Secret is missing in configuration.");
-            _context = context;
+            _studentRepository = studentRepository;
+            _jwtSecret = configuration["JwtSettings:Secret"]
+                ?? throw new ArgumentNullException(nameof(configuration), "JWT Secret is missing in configuration.");
         }
 
-        public async Task<AuthResultDto> RegisterAsync(string email, string password, string role, string ime, string prezime, string emailStudent, string telefon, DateOnly datumRodjenja, string status)
+        public async Task<AuthResultDto> RegisterAsync(RegisterStudentRequest request)
         {
-            if (!await _roleManager.RoleExistsAsync(role))
-                await _roleManager.CreateAsync(new IdentityRole(role));
+            if (!await _roleManager.RoleExistsAsync(request.Role))
+                await _roleManager.CreateAsync(new IdentityRole(request.Role));
 
             var student = new Studenti
             {
-                Ime = ime,
-                Prezime = prezime,
-                Email = emailStudent,
-                Telefon = telefon,
-                DatumRođenja = datumRodjenja,
-                Status = status
+                Ime = request.Ime,
+                Prezime = request.Prezime,
+                Email = request.EmailStudent,
+                Telefon = request.Telefon,
+                DatumRođenja = request.DatumRodjenja,
+                Status = request.Status
             };
 
-            _context.Studenti.Add(student);
-            await _context.SaveChangesAsync();
+            await _studentRepository.AddAsync(student);
 
-            var user = new ApplicationUser { UserName = email, Email = email, StudentId = student.StudentId };
-            var result = await _userManager.CreateAsync(user, password);
+            var user = new ApplicationUser
+            {
+                UserName = request.Email,
+                Email = request.Email,
+                StudentId = student.StudentId
+            };
+
+            var result = await _userManager.CreateAsync(user, request.Password);
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, role);
+                await _userManager.AddToRoleAsync(user, request.Role);
                 return new AuthResultDto { Succeeded = true };
             }
+
             return new AuthResultDto { Succeeded = false, Errors = result.Errors.Select(e => e.Description) };
         }
 
@@ -65,7 +75,7 @@ namespace StudentIndex.Server.Infrastructure.Services
                 {
                     new Claim(ClaimTypes.Name, email),
                     new Claim(ClaimTypes.NameIdentifier, user.Id),
-                    new Claim("StudentId", user.StudentId.ToString())
+                    new Claim("StudentId", user.StudentId?.ToString() ?? string.Empty)
                 };
                 claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
 
@@ -73,7 +83,7 @@ namespace StudentIndex.Server.Infrastructure.Services
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
                 var token = new JwtSecurityToken(
                     claims: claims,
-                    expires: DateTime.Now.AddHours(1),
+                    expires: DateTime.UtcNow.AddHours(1),
                     signingCredentials: creds);
 
                 return new AuthResultDto
@@ -82,6 +92,7 @@ namespace StudentIndex.Server.Infrastructure.Services
                     Token = new JwtSecurityTokenHandler().WriteToken(token)
                 };
             }
+
             return new AuthResultDto { Succeeded = false, Errors = new[] { "Invalid email or password" } };
         }
     }

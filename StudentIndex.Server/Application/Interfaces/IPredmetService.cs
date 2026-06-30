@@ -1,7 +1,6 @@
-﻿// StudentIndex.Application/Interfaces/IStudentService.cs
 using StudentIndex.Server.Domain.DTOs;
 
-namespace StudentIndex.Application.Interfaces
+namespace StudentIndex.Server.Application.Interfaces
 {
     public interface IPredmetService
     {

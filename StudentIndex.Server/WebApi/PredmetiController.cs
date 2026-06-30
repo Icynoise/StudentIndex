@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StudentIndex.Application.Interfaces;
+using StudentIndex.Server.Application.Interfaces;
 using StudentIndex.Server.Domain.DTOs;
 
 

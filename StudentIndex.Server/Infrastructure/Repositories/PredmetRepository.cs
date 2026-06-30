@@ -21,7 +21,7 @@ namespace StudentIndex.Server.Infrastructure.Repositories
             var latestStudentIspiti = await _context.StudentIspiti
                 .Where(si => si.StudentId == studentId)
                 .GroupBy(si => si.IspitId)
-                .Select(g => g.OrderByDescending(si => si.Student).FirstOrDefault())
+                .Select(g => g.OrderByDescending(si => si.StudentIspitId).FirstOrDefault())
                 .ToListAsync();
 
             // Query to get student subjects
@@ -55,7 +55,7 @@ namespace StudentIndex.Server.Infrastructure.Repositories
                 Naziv = r.Naziv,
                 Ects = r.Ects,
                 RezultatIspita = latestStudentIspiti
-            .FirstOrDefault(si => si.IspitId == r.IspitId && si.StudentId == studentId)?.RezultatIspita
+            .FirstOrDefault(si => si != null && si.IspitId == r.IspitId && si.StudentId == studentId)?.RezultatIspita
             });
         }
 

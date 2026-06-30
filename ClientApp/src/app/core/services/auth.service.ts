@@ -1,50 +1,49 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, Observable, tap, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { LoginRequest, LoginResponse } from '../../features/login/login.model';
-
+import { environment } from '../../../environments/environment';
+import { StudentService } from './student.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:7185/api/auth'; // Base URL
-  private loginEndpoint = `${this.apiUrl}/login`; // Full endpoint
-  private token: string | null = null;
+  private readonly apiUrl = `${environment.apiUrl}/auth`;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private jwtHelper: JwtHelperService,
+    private studentService: StudentService
+  ) {}
 
   login(request: LoginRequest): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(this.loginEndpoint, request);
+    return this.http.post<LoginResponse>(`${this.apiUrl}/login`, request);
   }
 
   setToken(token: string): void {
-    this.token = token;
-    localStorage.setItem('token', token); // Store in localStorage for persistence
+    localStorage.setItem('token', token);
   }
 
   getToken(): string | null {
-    if (!this.token) {
-      this.token = localStorage.getItem('token'); // Retrieve from localStorage if not in memory
-    }
-    return this.token;
+    return localStorage.getItem('token');
   }
 
   getRole(): string | null {
     const token = this.getToken();
-    if (token) {
-      const decodedToken = this.jwtHelper.decodeToken(token);
-      return decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] || null;
-    }
-    return null;
+    if (!token) return null;
+    const decoded = this.jwtHelper.decodeToken(token);
+    return decoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] ?? null;
   }
 
   isLoggedIn(): boolean {
-    return !!this.getToken(); // True if token exists, false if null
+    const token = this.getToken();
+    return !!token && !this.jwtHelper.isTokenExpired(token);
   }
 
   logout(): void {
-    this.token = null;
     localStorage.removeItem('token');
+    this.studentService.clearCache();
   }
 }

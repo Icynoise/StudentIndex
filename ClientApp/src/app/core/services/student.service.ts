@@ -1,21 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable, shareReplay } from 'rxjs';
 import { Student } from '../models/student.model';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
+  private readonly apiUrl = `${environment.apiUrl}/Studenti`;
+  private studentInfo$: Observable<Student> | null = null;
 
-  private apiUrl = 'https://localhost:7185/api'; // Replace with your API URL
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  // student-subjects.service.ts
   getStudentInfo(): Observable<Student> {
-    return this.http.get<Student>(
-      `${this.apiUrl}/Studenti/details`
-    );
+    if (!this.studentInfo$) {
+      this.studentInfo$ = this.http.get<Student>(`${this.apiUrl}/details`).pipe(
+        shareReplay(1)
+      );
+    }
+    return this.studentInfo$;
+  }
+
+  clearCache(): void {
+    this.studentInfo$ = null;
   }
 }
