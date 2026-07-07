@@ -1,39 +1,31 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using StudentIndex.Server.Application.DTOs;
 using StudentIndex.Server.Application.Interfaces;
-using StudentIndex.Server.Domain.DTOs;
-
+using StudentIndex.Server.Domain.Constants;
+using StudentIndex.Server.Extensions;
 
 namespace StudentIndex.Server.WebApi
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = Roles.Student)]
     public class PredmetiController : ControllerBase
     {
-        private readonly IPredmetService _studentService;
+        private readonly IPredmetService _predmetService;
 
-        public PredmetiController(IPredmetService studentService)
+        public PredmetiController(IPredmetService predmetService)
         {
-            _studentService = studentService;
+            _predmetService = predmetService;
         }
 
         [HttpGet("moji-predmeti")]
-        [Authorize(Roles = "Student")]
         public async Task<ActionResult<IEnumerable<PredmetiDto>>> GetStudentSubjects(
             [FromQuery] int semesterId)
         {
-
-            if (!int.TryParse(User.FindFirst("StudentId")?.Value, out int studentIdClaim))
-            {
-                return Unauthorized("StudentId not found in token.");
-            }
-
-            var subjects = await _studentService.GetStudentPredmetiPoSemestru(studentIdClaim, semesterId);
-
-  
-
+            var subjects = await _predmetService
+                .GetStudentPredmetiPoSemestru(User.GetStudentId(), semesterId);
             return Ok(subjects);
-
         }
     }
 }

@@ -1,4 +1,4 @@
-using StudentIndex.Server.Domain.DTOs;
+using StudentIndex.Server.Application.DTOs;
 
 namespace StudentIndex.Server.Application.Interfaces
 {
@@ -6,5 +6,7 @@ namespace StudentIndex.Server.Application.Interfaces
     {
         Task<AuthResultDto> RegisterAsync(RegisterStudentRequest request);
         Task<AuthResultDto> LoginAsync(string email, string password);
+        Task<AuthResultDto> RefreshTokenAsync(string refreshToken);
+        Task LogoutAsync(string refreshToken);
     }
 }

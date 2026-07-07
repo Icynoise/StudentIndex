@@ -1,32 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable } from 'rxjs';
 import { DostupniIspiti, IspitPrijava } from '../models/ispitPrijava.model';
-
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IspitiService {
+  private readonly apiUrl = `${environment.apiUrl}/PrijavaIspita`;
 
-  private apiUrl = 'https://localhost:7185/api'; // Replace with your API URL
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  // student-subjects.service.ts
   getStudentInfo(): Observable<IspitPrijava> {
-      return this.http.get<IspitPrijava>(
-        `${this.apiUrl}/PrijavaIspita/student-data`
-      );
-    }
+    return this.http.get<IspitPrijava>(`${this.apiUrl}/student-data`);
+  }
 
-    getAvailableExams(): Observable<DostupniIspiti[]> {
-      return this.http.get<DostupniIspiti[]>(
-        `${this.apiUrl}/PrijavaIspita/available-exams`
-      );
-    }
+  getAvailableExams(): Observable<DostupniIspiti[]> {
+    return this.http.get<DostupniIspiti[]>(`${this.apiUrl}/available-exams`);
+  }
 
-    registerForExam(ispitId: number): Observable<any> {
-      return this.http.post(`${this.apiUrl}/PrijavaIspita/register`, ispitId)
-    }
+  registerForExam(ispitId: number): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(`${this.apiUrl}/register`, { ispitId });
+  }
 }

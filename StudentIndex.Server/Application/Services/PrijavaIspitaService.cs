@@ -1,7 +1,8 @@
+using StudentIndex.Server.Application.DTOs;
+using StudentIndex.Server.Application.Exceptions;
 using StudentIndex.Server.Application.Interfaces;
 using StudentIndex.Server.Domain;
 using StudentIndex.Server.Domain.Constants;
-using StudentIndex.Server.Domain.DTOs;
 
 namespace StudentIndex.Server.Application.Services
 {
@@ -24,10 +25,10 @@ namespace StudentIndex.Server.Application.Services
         public async Task<List<DostupniIspitiDto>> GetAvailableExamsAsync(int studentId)
         {
             var student = await _studentRepository.GetByStudentIdAsync(studentId);
-            if (student == null) throw new Exception("Student not found");
+            if (student == null) throw new NotFoundException("Student nije pronađen.");
 
             var studijskiProgramId = student.StudentStudijskiPrograms.FirstOrDefault()?.StudijskiProgramId;
-            if (studijskiProgramId == null) throw new Exception("Study program not found");
+            if (studijskiProgramId == null) throw new NotFoundException("Studijski program nije pronađen.");
 
             var exams = await _ispitRepository.GetAvailableExamsForProgramAsync(studijskiProgramId.Value);
 
@@ -42,7 +43,7 @@ namespace StudentIndex.Server.Application.Services
         public async Task<PrijavaIspitaDto> GetStudentExamRegistrationDataAsync(int studentId)
         {
             var student = await _studentRepository.GetByStudentIdAsync(studentId);
-            if (student == null) throw new Exception("Student not found");
+            if (student == null) throw new NotFoundException("Student nije pronađen.");
 
             return new PrijavaIspitaDto
             {
@@ -58,13 +59,15 @@ namespace StudentIndex.Server.Application.Services
         public async Task RegisterForExamAsync(int studentId, int ispitId)
         {
             var student = await _studentRepository.GetByStudentIdAsync(studentId);
-            if (student == null) throw new Exception("Student not found");
+            if (student == null) throw new NotFoundException("Student nije pronađen.");
 
             var exam = await _ispitRepository.GetByIdAsync(ispitId);
-            if (exam == null) throw new Exception("Exam not found");
+            if (exam == null) throw new NotFoundException("Ispit nije pronađen.");
 
+            // Prijateljska provjera; stvarnu garanciju daje unique index u bazi,
+            // a repozitorijum prevodi povredu indeksa u ConflictException.
             if (await _prijavaIspitaRepository.ExistsPendingRegistrationAsync(student.StudentId, ispitId))
-                throw new Exception("Student je vec prijavio ovaj ispit i ceka se odobrenje.");
+                throw new ConflictException("Ispit je već prijavljen i čeka odobrenje.");
 
             await _prijavaIspitaRepository.AddAsync(new StudentIspiti
             {

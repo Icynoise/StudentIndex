@@ -1,5 +1,4 @@
-﻿using StudentIndex.Server.Domain;
-using StudentIndex.Server.Domain.DTOs;
+﻿using StudentIndex.Server.Application.DTOs;
 
 namespace StudentIndex.Server.Application.Interfaces
 {

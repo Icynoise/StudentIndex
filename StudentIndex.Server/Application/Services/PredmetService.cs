@@ -1,6 +1,6 @@
+using StudentIndex.Server.Application.DTOs;
 using StudentIndex.Server.Application.Interfaces;
 using StudentIndex.Server.Domain.Constants;
-using StudentIndex.Server.Domain.DTOs;
 
 namespace StudentIndex.Server.Application.Services
 {

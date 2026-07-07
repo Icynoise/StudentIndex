@@ -1,99 +1,111 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Logging;
+using StudentIndex.Server.Application.DTOs;
+using StudentIndex.Server.Application.Exceptions;
 using StudentIndex.Server.Application.Interfaces;
 using StudentIndex.Server.Domain;
-using StudentIndex.Server.Domain.DTOs;
-using StudentIndex.Server.Infrastructure.Identity;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+using StudentIndex.Server.Domain.Constants;
 
 namespace StudentIndex.Server.Application.Services
 {
     public class AuthService : IAuthService
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IIdentityService _identityService;
+        private readonly ITokenGenerator _tokenGenerator;
         private readonly IStudentRepository _studentRepository;
-        private readonly string _jwtSecret;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly ILogger<AuthService> _logger;
 
         public AuthService(
-            UserManager<ApplicationUser> userManager,
-            RoleManager<IdentityRole> roleManager,
+            IIdentityService identityService,
+            ITokenGenerator tokenGenerator,
             IStudentRepository studentRepository,
-            IConfiguration configuration)
+            IUnitOfWork unitOfWork,
+            ILogger<AuthService> logger)
         {
-            _userManager = userManager;
-            _roleManager = roleManager;
+            _identityService = identityService;
+            _tokenGenerator = tokenGenerator;
             _studentRepository = studentRepository;
-            _jwtSecret = configuration["JwtSettings:Secret"]
-                ?? throw new ArgumentNullException(nameof(configuration), "JWT Secret is missing in configuration.");
+            _unitOfWork = unitOfWork;
+            _logger = logger;
         }
 
         public async Task<AuthResultDto> RegisterAsync(RegisterStudentRequest request)
         {
-            if (!await _roleManager.RoleExistsAsync(request.Role))
-                await _roleManager.CreateAsync(new IdentityRole(request.Role));
-
-            var student = new Studenti
+            try
             {
-                Ime = request.Ime,
-                Prezime = request.Prezime,
-                Email = request.EmailStudent,
-                Telefon = request.Telefon,
-                DatumRođenja = request.DatumRodjenja,
-                Status = request.Status
-            };
+                // Upis studenta i kreiranje Identity korisnika moraju biti atomarni —
+                // ako kreiranje korisnika ne uspije, upis studenta se vraća nazad.
+                await _unitOfWork.ExecuteInTransactionAsync(async () =>
+                {
+                    var student = new Studenti
+                    {
+                        Ime = request.Ime,
+                        Prezime = request.Prezime,
+                        BrojIndexa = request.BrojIndexa,
+                        Email = request.EmailStudent,
+                        Telefon = request.Telefon,
+                        DatumRođenja = request.DatumRodjenja,
+                        Status = request.Status ?? StatusStudenta.Aktivan
+                    };
 
-            await _studentRepository.AddAsync(student);
+                    await _studentRepository.AddAsync(student);
 
-            var user = new ApplicationUser
+                    var result = await _identityService.CreateStudentUserAsync(
+                        request.Email, request.Password, student.StudentId);
+
+                    if (!result.Succeeded)
+                        throw new RegistrationFailedException(result.Errors);
+                });
+            }
+            catch (RegistrationFailedException ex)
             {
-                UserName = request.Email,
-                Email = request.Email,
-                StudentId = student.StudentId
-            };
-
-            var result = await _userManager.CreateAsync(user, request.Password);
-
-            if (result.Succeeded)
-            {
-                await _userManager.AddToRoleAsync(user, request.Role);
-                return new AuthResultDto { Succeeded = true };
+                return new AuthResultDto { Succeeded = false, Errors = ex.Errors };
             }
 
-            return new AuthResultDto { Succeeded = false, Errors = result.Errors.Select(e => e.Description) };
+            _logger.LogInformation("Registrovan novi student: {Email}", request.Email);
+            return new AuthResultDto { Succeeded = true };
         }
 
         public async Task<AuthResultDto> LoginAsync(string email, string password)
         {
-            var user = await _userManager.FindByEmailAsync(email);
-            if (user != null && await _userManager.CheckPasswordAsync(user, password))
+            var user = await _identityService.ValidateCredentialsAsync(email, password);
+            if (user == null)
             {
-                var roles = await _userManager.GetRolesAsync(user);
-                var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, email),
-                    new Claim(ClaimTypes.NameIdentifier, user.Id),
-                    new Claim("StudentId", user.StudentId?.ToString() ?? string.Empty)
-                };
-                claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
-
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSecret));
-                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-                var token = new JwtSecurityToken(
-                    claims: claims,
-                    expires: DateTime.UtcNow.AddHours(1),
-                    signingCredentials: creds);
-
+                _logger.LogWarning("Neuspješna prijava za {Email}", email);
                 return new AuthResultDto
                 {
-                    Succeeded = true,
-                    Token = new JwtSecurityTokenHandler().WriteToken(token)
+                    Succeeded = false,
+                    Errors = new[] { "Pogrešan email ili lozinka." }
                 };
             }
 
-            return new AuthResultDto { Succeeded = false, Errors = new[] { "Invalid email or password" } };
+            return await IssueTokensAsync(user);
+        }
+
+        public async Task<AuthResultDto> RefreshTokenAsync(string refreshToken)
+        {
+            var user = await _identityService.ValidateAndRevokeRefreshTokenAsync(refreshToken);
+            if (user == null)
+                throw new UnauthorizedException("Refresh token je nevažeći ili je istekao.");
+
+            return await IssueTokensAsync(user);
+        }
+
+        public Task LogoutAsync(string refreshToken)
+            => _identityService.RevokeRefreshTokenAsync(refreshToken);
+
+        private async Task<AuthResultDto> IssueTokensAsync(UserInfoDto user)
+        {
+            var accessToken = _tokenGenerator.GenerateAccessToken(user);
+            var refreshToken = _tokenGenerator.GenerateRefreshToken();
+            await _identityService.StoreRefreshTokenAsync(user.UserId, refreshToken);
+
+            return new AuthResultDto
+            {
+                Succeeded = true,
+                Token = accessToken,
+                RefreshToken = refreshToken
+            };
         }
     }
 }

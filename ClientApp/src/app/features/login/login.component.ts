@@ -28,7 +28,7 @@ export class LoginComponent {
     };
     this.authService.login(request).subscribe({
       next: (response) => {
-        this.authService.setToken(response.token);
+        this.authService.setSession(response);
         this.router.navigate(['/pocetna']);
       },
       error: (err) => {

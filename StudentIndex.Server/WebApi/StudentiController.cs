@@ -1,15 +1,17 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using StudentIndex.Server.Application.DTOs;
 using StudentIndex.Server.Application.Interfaces;
-using StudentIndex.Server.Domain.DTOs;
+using StudentIndex.Server.Domain.Constants;
+using StudentIndex.Server.Extensions;
 
 namespace StudentIndex.Server.WebApi
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = Roles.Student)]
     public class StudentiController : ControllerBase
     {
-
         private readonly IStudentService _studentService;
 
         public StudentiController(IStudentService studentService)
@@ -17,22 +19,10 @@ namespace StudentIndex.Server.WebApi
             _studentService = studentService;
         }
 
-
         [HttpGet("details")]
-        [Authorize(Roles = "Student")]
         public async Task<ActionResult<StudentDto>> GetStudentDetails()
         {
-            if (!int.TryParse(User.FindFirst("StudentId")?.Value, out int studentId))
-            {
-                return Unauthorized("StudentId not found or invalid in token.");
-            }
-
-            var student = await _studentService.GetByUserId(studentId);
-            if (student == null)
-            {
-                return NotFound("Student not found.");
-            }
-
+            var student = await _studentService.GetByUserId(User.GetStudentId());
             return Ok(student);
         }
     }

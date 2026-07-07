@@ -25,6 +25,7 @@ public partial class StudentAplikacijaContext : IdentityDbContext<ApplicationUse
     public virtual DbSet<StudentStudijskiProgram> StudentStudijskiProgram { get; set; }
     public virtual DbSet<Studenti> Studenti { get; set; }
     public virtual DbSet<StudijskiProgrami> StudijskiProgrami { get; set; }
+    public virtual DbSet<Identity.RefreshToken> RefreshTokens { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -108,6 +109,13 @@ public partial class StudentAplikacijaContext : IdentityDbContext<ApplicationUse
             entity.HasKey(e => e.StudentIspitId).HasName("PK__StudentI__BD14C2F8BC9C8773");
             entity.ToTable("StudentIspiti");
             entity.Property(e => e.RezultatIspita).HasMaxLength(20);
+            entity.Property(e => e.Status).HasMaxLength(50);
+            // Garancija u bazi da student ne može dva puta imati prijavu "na čekanju" za isti ispit
+            // (štiti od race condition-a između provjere i upisa).
+            entity.HasIndex(e => new { e.StudentId, e.IspitId })
+                .IsUnique()
+                .HasFilter($"[Status] = N'{Domain.Constants.StatusIspita.NaCekanju}'")
+                .HasDatabaseName("UX_StudentIspiti_PendingRegistration");
             entity.HasOne(d => d.Ispit).WithMany(p => p.StudentIspitis)
                 .HasForeignKey(d => d.IspitId)
                 .HasConstraintName("FK__StudentIs__Ispit__59FA5E80");
@@ -157,6 +165,16 @@ public partial class StudentAplikacijaContext : IdentityDbContext<ApplicationUse
             .HasForeignKey<ApplicationUser>(u => u.StudentId)
             .IsRequired(false)
             .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Identity.RefreshToken>(entity =>
+        {
+            entity.ToTable("RefreshTokens");
+            entity.Property(e => e.TokenHash).HasMaxLength(64);
+            entity.HasIndex(e => e.TokenHash).IsUnique();
+            entity.HasOne(e => e.User).WithMany()
+                .HasForeignKey(e => e.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
 
         OnModelCreatingPartial(modelBuilder);
     }

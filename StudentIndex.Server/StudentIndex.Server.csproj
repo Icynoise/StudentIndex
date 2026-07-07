@@ -11,6 +11,7 @@
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <!-- Must match the Angular dev server port -->
     <SpaProxyServerUrl>http://localhost:4200</SpaProxyServerUrl>
+    <UserSecretsId>aaa37512-06b8-49b7-acfa-d6a60ac7ad5e</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

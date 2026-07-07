@@ -1,5 +1,6 @@
+using StudentIndex.Server.Application.DTOs;
+using StudentIndex.Server.Application.Exceptions;
 using StudentIndex.Server.Application.Interfaces;
-using StudentIndex.Server.Domain.DTOs;
 
 namespace StudentIndex.Server.Application.Services
 {
@@ -16,7 +17,7 @@ namespace StudentIndex.Server.Application.Services
         {
             var student = await _studentRepo.GetByStudentIdAsync(userId);
             if (student == null)
-                throw new Exception("Student not found");
+                throw new NotFoundException("Student nije pronađen.");
 
             return new StudentDto
             {
