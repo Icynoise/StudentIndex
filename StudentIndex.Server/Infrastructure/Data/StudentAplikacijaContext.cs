@@ -108,7 +108,6 @@ public partial class StudentAplikacijaContext : IdentityDbContext<ApplicationUse
         {
             entity.HasKey(e => e.StudentIspitId).HasName("PK__StudentI__BD14C2F8BC9C8773");
             entity.ToTable("StudentIspiti");
-            entity.Property(e => e.RezultatIspita).HasMaxLength(20);
             entity.Property(e => e.Status).HasMaxLength(50);
             // Garancija u bazi da student ne može dva puta imati prijavu "na čekanju" za isti ispit
             // (štiti od race condition-a između provjere i upisa).

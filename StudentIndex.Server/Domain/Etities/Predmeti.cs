@@ -15,7 +15,7 @@ public partial class Predmeti
     public short Ects { get; set; }
 
     [NotMapped]
-    public string? RezultatIspita { get; set; }
+    public int? RezultatIspita { get; set; }
 
 
     public virtual ICollection<Ispiti> Ispitis { get; set; } = new List<Ispiti>();

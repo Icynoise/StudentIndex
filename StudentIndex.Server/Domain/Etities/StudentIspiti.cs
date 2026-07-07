@@ -12,7 +12,7 @@ public partial class StudentIspiti
 
     public int? IspitId { get; set; }
 
-    public string? RezultatIspita { get; set; }
+    public int? RezultatIspita { get; set; }
 
     public string Status { get; set; } = Constants.StatusIspita.NaCekanju;
 

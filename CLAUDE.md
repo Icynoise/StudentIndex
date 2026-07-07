@@ -81,7 +81,11 @@ Routes are lazy-loaded in `app.routes.ts`. DI is configured in `app.config.ts`.
 DTOs in `Application/DTOs/` are mapped **manually** inside services — AutoMapper is referenced in the `.csproj` but not configured. Do not add AutoMapper wiring without discussing it first.
 
 ### Database Drift Warning
-The DB and migration history have drifted in the past (migrations applied to the DB whose files were deleted). Known remaining drift: `StudentIspiti.RezultatIspita` is `int` in the DB but `string?` in the entity; `Studenti.Status`/`BrojIndexa` are NOT NULL in the DB but nullable in the entity. Verify against the real schema before relying on the model.
+The DB and migration history have drifted in the past (migrations applied to the DB whose files were deleted). Known remaining drift:
+- The `PokušajiIspita` table does NOT exist in the DB, but the `PokušajiIspitum` entity is still mapped in the model — any query touching it (or including `StudentIspiti.PokušajiIspita`) will fail at runtime.
+- The `IspitPreduslovi` table exists in the DB but has no entity in the model (harmless).
+
+Verify against the real schema before relying on the model.
 
 ### Entity Naming Note
 Domain entity files are in `Domain/Etities/` (typo in folder name — do not rename, migrations depend on the assembly paths).

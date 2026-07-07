@@ -8,6 +8,6 @@ namespace StudentIndex.Server.Application.DTOs
 
         public string? Status { get; set; }
 
-        public string? RezultatIspita { get; set; }
+        public int? RezultatIspita { get; set; }
     }
 }

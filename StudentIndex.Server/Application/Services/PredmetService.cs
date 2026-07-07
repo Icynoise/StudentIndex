@@ -25,15 +25,12 @@ namespace StudentIndex.Server.Application.Services
             }).ToList();
         }
 
-        private static string GetStatus(string? rezultatIspita)
+        private static string GetStatus(int? rezultatIspita)
         {
-            if (string.IsNullOrEmpty(rezultatIspita))
+            if (rezultatIspita == null)
                 return StatusIspita.NemaIzlazaka;
 
-            if (int.TryParse(rezultatIspita, out int rezultat))
-                return rezultat > 5 ? StatusIspita.Polozeno : StatusIspita.Nepolozeno;
-
-            return StatusIspita.NevalidanUnos;
+            return rezultatIspita > 5 ? StatusIspita.Polozeno : StatusIspita.Nepolozeno;
         }
     }
 }

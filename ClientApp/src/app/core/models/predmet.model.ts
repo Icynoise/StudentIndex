@@ -2,5 +2,5 @@ export interface Predmet {
   naziv: string;
   ects: number;
   status: string;
-  rezultatIspita: string | null;
+  rezultatIspita: number | null;
 }

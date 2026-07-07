@@ -24,9 +24,13 @@ public partial class Studenti
     [Phone]
     public string? Telefon { get; set; }
 
-    public string? Status { get; set; } 
+    [Required]
+    [StringLength(20)]
+    public string Status { get; set; } = null!;
 
-    public string? BrojIndexa { get; set; }
+    [Required]
+    [StringLength(15)]
+    public string BrojIndexa { get; set; } = null!;
 
     public virtual ICollection<StudentIspiti> StudentIspitis { get; set; } = new List<StudentIspiti>();
 
