@@ -22,7 +22,7 @@ namespace StudentIndex.Server.Application.Services
             _prijavaIspitaRepository = prijavaIspitaRepository;
         }
 
-        public async Task<List<DostupniIspitiDto>> GetAvailableExamsAsync(int studentId)
+        public async Task<IQueryable<DostupniIspitiDto>> GetAvailableExamsQueryAsync(int studentId)
         {
             var student = await _studentRepository.GetByStudentIdAsync(studentId);
             if (student == null) throw new NotFoundException("Student nije pronađen.");
@@ -30,14 +30,14 @@ namespace StudentIndex.Server.Application.Services
             var studijskiProgramId = student.StudentStudijskiPrograms.FirstOrDefault()?.StudijskiProgramId;
             if (studijskiProgramId == null) throw new NotFoundException("Studijski program nije pronađen.");
 
-            var exams = await _ispitRepository.GetAvailableExamsForProgramAsync(studijskiProgramId.Value);
-
-            return exams.Select(i => new DostupniIspitiDto
-            {
-                IspitId = i.IspitId,
-                PredmetNaziv = i.Predmet?.Naziv ?? string.Empty,
-                DatumIspita = i.DatumIspita.GetValueOrDefault()
-            }).ToList();
+            // Projekcija ostaje IQueryable — filtere/sort/paging dodaje SmartResult, izvršava se u SQL-u
+            return _ispitRepository.QueryAvailableExamsForProgram(studijskiProgramId.Value)
+                .Select(i => new DostupniIspitiDto
+                {
+                    IspitId = i.IspitId,
+                    PredmetNaziv = i.Predmet != null ? i.Predmet.Naziv : string.Empty,
+                    DatumIspita = i.DatumIspita
+                });
         }
 
         public async Task<PrijavaIspitaDto> GetStudentExamRegistrationDataAsync(int studentId)

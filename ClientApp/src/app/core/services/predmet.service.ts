@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from '../../../environments/environment';
+import { Predmet } from '../models/predmet.model';
+import { QueryOptions, buildQueryParams } from '../models/query-options.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +14,8 @@ export class PredmetService {
 
   constructor(private http: HttpClient) { }
 
-  // student-subjects.service.ts
-  getStudentSubjects(semesterId: number): Observable<any[]> {
-    return this.http.get<any[]>(
-      `${this.apiUrl}/moji-predmeti?semesterId=${semesterId}`
-    );
+  getStudentSubjects(semesterId: number, options?: QueryOptions): Observable<Predmet[]> {
+    const params = buildQueryParams(options, new HttpParams().set('semesterId', semesterId));
+    return this.http.get<Predmet[]>(`${this.apiUrl}/moji-predmeti`, { params });
   }
 }

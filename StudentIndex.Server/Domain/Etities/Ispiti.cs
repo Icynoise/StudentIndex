@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace StudentIndex.Server.Domain;
@@ -9,9 +9,13 @@ public partial class Ispiti
 
     public int? PredmetId { get; set; }
 
-    public DateOnly? DatumIspita { get; set; }
+    public DateTime DatumIspita { get; set; }
 
-    public string? TipIspita { get; set; }
+    public DateTime? RokZaRegistraciju { get; set; }
+
+    public string Status { get; set; } = "Open";
+
+    public int Rokovi { get; set; }
 
     public virtual Predmeti? Predmet { get; set; }
 

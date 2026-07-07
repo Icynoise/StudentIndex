@@ -1,16 +1,15 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StudentIndex.Server.Application.DTOs;
 using StudentIndex.Server.Application.Interfaces;
+using StudentIndex.Server.Application.Queries;
 using StudentIndex.Server.Domain.Constants;
 using StudentIndex.Server.Extensions;
 
 namespace StudentIndex.Server.WebApi
 {
     [Route("api/[controller]")]
-    [ApiController]
     [Authorize(Roles = Roles.Student)]
-    public class PredmetiController : ControllerBase
+    public class PredmetiController : BaseController
     {
         private readonly IPredmetService _predmetService;
 
@@ -20,12 +19,14 @@ namespace StudentIndex.Server.WebApi
         }
 
         [HttpGet("moji-predmeti")]
-        public async Task<ActionResult<IEnumerable<PredmetiDto>>> GetStudentSubjects(
-            [FromQuery] int semesterId)
+        public async Task<IActionResult> GetStudentSubjects(
+            [FromQuery] int semesterId, QueryParameters parameters)
         {
             var subjects = await _predmetService
                 .GetStudentPredmetiPoSemestru(User.GetStudentId(), semesterId);
-            return Ok(subjects);
+
+            // Lista je već materijalizovana (kombinuje se u memoriji) — SmartResult radi LINQ-to-Objects
+            return SmartResult(subjects.AsQueryable(), parameters);
         }
     }
 }

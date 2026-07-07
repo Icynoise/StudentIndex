@@ -21,9 +21,9 @@
       <table *ngIf="!loading" class="predmeti-table">
         <thead>
           <tr>
-            <th>Naziv predmeta</th>
-            <th>ECTS</th>
-            <th>Status</th>
+            <th (click)="sortBy('naziv')" style="cursor: pointer;">Naziv predmeta {{ sortIndicator('naziv') }}</th>
+            <th (click)="sortBy('ects')" style="cursor: pointer;">ECTS {{ sortIndicator('ects') }}</th>
+            <th (click)="sortBy('status')" style="cursor: pointer;">Status {{ sortIndicator('status') }}</th>
           </tr>
         </thead>
         <tbody>

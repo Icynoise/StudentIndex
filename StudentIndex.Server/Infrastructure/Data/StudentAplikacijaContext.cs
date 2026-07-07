@@ -42,7 +42,7 @@ public partial class StudentAplikacijaContext : IdentityDbContext<ApplicationUse
         {
             entity.HasKey(e => e.IspitId).HasName("PK__Ispiti__2F2104AD5FBC6371");
             entity.ToTable("Ispiti");
-            entity.Property(e => e.TipIspita).HasMaxLength(50);
+            entity.Property(e => e.Status).HasMaxLength(20).HasDefaultValue("Open");
             entity.HasOne(d => d.Predmet).WithMany(p => p.Ispitis)
                 .HasForeignKey(d => d.PredmetId)
                 .HasConstraintName("FK__Ispiti__PredmetI__5629CD9C");

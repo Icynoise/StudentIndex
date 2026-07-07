@@ -50,6 +50,19 @@ Request flow: `Controller → IService → IRepository → StudentAplikacijaCont
 
 All services and repositories are registered as `AddScoped` in `Extensions/ServiceCollectionExtensions.cs`. **Do not add registrations directly in `Program.cs`** — use the extension methods there (`AddDatabase`, `AddJwtAuthentication`, `AddApplicationServices`, `AddCorsPolicy`, `AddSwaggerWithJwt`).
 
+### SmartResult (grid/list endpoints)
+List endpoints inherit `WebApi/BaseController.cs` and return `SmartResult(queryable, parameters)`. The `QueryParameters` binder (`WebApi/ModelBinding/`) turns the query string into filters/sort/paging applied by `Application/Queries/QueryableExtensions.cs` — executed in SQL for EF sources, in memory for materialized lists.
+
+Client query string capabilities:
+- `search=text` — quick search over all string columns
+- `column=value` or `column=op|value` — operators: `eq nq sw cn lt le gt ge in em nm` (e.g. `naziv=cn|matem`, `datumIspita=ge|2026-09-05`)
+- `sort=col|dsc,col2` — multi-column sort
+- `page=2&pageSize=50` — paging (omitted → returns everything, backwards compatible)
+- `returnNumberOfRows=true` — count only
+- Unknown columns → 400. Other action parameters (e.g. `semesterId`) are automatically excluded from filtering.
+
+Angular side: `core/models/query-options.model.ts` (`QueryOptions` + `buildQueryParams`); services accept an optional `QueryOptions`.
+
 ### Error Handling
 Services throw typed exceptions from `Application/Exceptions/` (`NotFoundException` → 404, `ConflictException` → 409, `UnauthorizedException` → 401). `WebApi/GlobalExceptionHandler.cs` maps them to ProblemDetails responses. **Do not add try/catch to controllers** — throw the appropriate exception in the service instead.
 
@@ -84,6 +97,7 @@ DTOs in `Application/DTOs/` are mapped **manually** inside services — AutoMapp
 The DB and migration history have drifted in the past (migrations applied to the DB whose files were deleted). Known remaining drift:
 - The `PokušajiIspita` table does NOT exist in the DB, but the `PokušajiIspitum` entity is still mapped in the model — any query touching it (or including `StudentIspiti.PokušajiIspita`) will fail at runtime.
 - The `IspitPreduslovi` table exists in the DB but has no entity in the model (harmless).
+- `Ispiti` drift was reconciled by `FixIspitiSchemaDrift` (DatumIspita is `DateTime`, columns Status/Rokovi/RokZaRegistraciju added to the model, TipIspita removed).
 
 Verify against the real schema before relying on the model.
 

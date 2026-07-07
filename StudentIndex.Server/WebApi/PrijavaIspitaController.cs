@@ -2,15 +2,15 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StudentIndex.Server.Application.DTOs;
 using StudentIndex.Server.Application.Interfaces;
+using StudentIndex.Server.Application.Queries;
 using StudentIndex.Server.Domain.Constants;
 using StudentIndex.Server.Extensions;
 
 namespace StudentIndex.Server.WebApi
 {
     [Route("api/[controller]")]
-    [ApiController]
     [Authorize(Roles = Roles.Student)]
-    public class PrijavaIspitaController : ControllerBase
+    public class PrijavaIspitaController : BaseController
     {
         private readonly IPrijavaIspitaService _prijavaIspitaService;
 
@@ -20,19 +20,19 @@ namespace StudentIndex.Server.WebApi
         }
 
         [HttpGet("student-data")]
-        public async Task<ActionResult<PrijavaIspitaDto>> GetStudentData()
+        public async Task<IActionResult> GetStudentData()
         {
             var studentData = await _prijavaIspitaService
                 .GetStudentExamRegistrationDataAsync(User.GetStudentId());
-            return Ok(studentData);
+            return SmartResult(studentData);
         }
 
         [HttpGet("available-exams")]
-        public async Task<ActionResult<List<DostupniIspitiDto>>> GetAvailableExams()
+        public async Task<IActionResult> GetAvailableExams(QueryParameters parameters)
         {
             var availableExams = await _prijavaIspitaService
-                .GetAvailableExamsAsync(User.GetStudentId());
-            return Ok(availableExams);
+                .GetAvailableExamsQueryAsync(User.GetStudentId());
+            return SmartResult(availableExams, parameters);
         }
 
         [HttpPost("register")]

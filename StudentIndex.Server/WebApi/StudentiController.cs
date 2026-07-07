@@ -8,9 +8,8 @@ using StudentIndex.Server.Extensions;
 namespace StudentIndex.Server.WebApi
 {
     [Route("api/[controller]")]
-    [ApiController]
     [Authorize(Roles = Roles.Student)]
-    public class StudentiController : ControllerBase
+    public class StudentiController : BaseController
     {
         private readonly IStudentService _studentService;
 
@@ -20,10 +19,10 @@ namespace StudentIndex.Server.WebApi
         }
 
         [HttpGet("details")]
-        public async Task<ActionResult<StudentDto>> GetStudentDetails()
+        public async Task<IActionResult> GetStudentDetails()
         {
             var student = await _studentService.GetByUserId(User.GetStudentId());
-            return Ok(student);
+            return SmartResult(student);
         }
     }
 }

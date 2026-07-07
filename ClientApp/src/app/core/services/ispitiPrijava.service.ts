@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { DostupniIspiti, IspitPrijava } from '../models/ispitPrijava.model';
+import { QueryOptions, buildQueryParams } from '../models/query-options.model';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -16,8 +17,10 @@ export class IspitiService {
     return this.http.get<IspitPrijava>(`${this.apiUrl}/student-data`);
   }
 
-  getAvailableExams(): Observable<DostupniIspiti[]> {
-    return this.http.get<DostupniIspiti[]>(`${this.apiUrl}/available-exams`);
+  getAvailableExams(options?: QueryOptions): Observable<DostupniIspiti[]> {
+    return this.http.get<DostupniIspiti[]>(`${this.apiUrl}/available-exams`, {
+      params: buildQueryParams(options)
+    });
   }
 
   registerForExam(ispitId: number): Observable<{ message: string }> {

@@ -21,13 +21,11 @@ namespace StudentIndex.Server.Infrastructure.Repositories
                 .FirstOrDefaultAsync(i => i.IspitId == ispitId);
         }
 
-        public async Task<List<Ispiti>> GetAvailableExamsForProgramAsync(int studijskiProgramId)
+        public IQueryable<Ispiti> QueryAvailableExamsForProgram(int studijskiProgramId)
         {
-            return await _context.Ispiti
-                .Include(i => i.Predmet)
+            return _context.Ispiti
                 .Where(i => _context.PredmetiUprogramima
-                    .Any(pup => pup.StudijskiProgramId == studijskiProgramId && pup.PredmetId == i.PredmetId))
-                .ToListAsync();
+                    .Any(pup => pup.StudijskiProgramId == studijskiProgramId && pup.PredmetId == i.PredmetId));
         }
     }
 }
