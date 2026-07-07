@@ -82,6 +82,13 @@ public class IdentityService : IIdentityService
         return await ToUserInfoAsync(stored.User);
     }
 
+    public async Task RevokeAllRefreshTokensAsync(string userId)
+    {
+        await _context.RefreshTokens
+            .Where(rt => rt.UserId == userId && rt.RevokedAtUtc == null)
+            .ExecuteUpdateAsync(s => s.SetProperty(rt => rt.RevokedAtUtc, DateTime.UtcNow));
+    }
+
     public async Task RevokeRefreshTokenAsync(string refreshToken)
     {
         var stored = await FindByTokenAsync(refreshToken);

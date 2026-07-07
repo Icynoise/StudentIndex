@@ -79,6 +79,9 @@ namespace StudentIndex.Server.Application.Services
                 };
             }
 
+            // Jedna aktivna sesija po nalogu — novi login opoziva sve prethodne sesije.
+            await _identityService.RevokeAllRefreshTokensAsync(user.UserId);
+
             return await IssueTokensAsync(user);
         }
 

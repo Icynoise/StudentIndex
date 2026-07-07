@@ -22,5 +22,8 @@ namespace StudentIndex.Server.Application.Interfaces
         Task<UserInfoDto?> ValidateAndRevokeRefreshTokenAsync(string refreshToken);
 
         Task RevokeRefreshTokenAsync(string refreshToken);
+
+        /// <summary>Opoziva sve aktivne refresh tokene korisnika (jedna aktivna sesija po nalogu).</summary>
+        Task RevokeAllRefreshTokensAsync(string userId);
     }
 }
