@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentIndex.Server", "StudentIndex.Server.csproj", "{0F120920-D956-4956-A08C-B56ABDE44A0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentIndex.Server", "StudentIndex.Server\StudentIndex.Server.csproj", "{0F120920-D956-4956-A08C-B56ABDE44A0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

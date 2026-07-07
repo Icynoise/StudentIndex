@@ -2,11 +2,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Repository Layout
+The solution file (`StudentIndex.sln`) and `global.json` live at the repo root. `ClientApp/` (Angular) and `StudentIndex.Server/` (ASP.NET) are siblings — never nest one inside the other.
+
 ## Commands
 
 ### Backend (StudentIndex.Server)
 ```bash
-dotnet build
+dotnet build    # or: dotnet build StudentIndex.sln from the repo root
 dotnet run
 ```
 The backend starts on `https://localhost:7185`. In development it proxies Angular via SPA middleware.
